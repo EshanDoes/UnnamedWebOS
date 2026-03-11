@@ -9,6 +9,10 @@
 </head>
 
 <body>
+    <div class="mobileDisclaimer">
+        <img src="icon.png">
+        <p>This site is not mobile compatible! Please open it on a desktop device or anything that uses a mouse.</p>
+    </div>
     <div id="body">
         <div class="icons">
             <img src="notesIcon.png" onclick="openWindow('notesWindow')">
@@ -23,12 +27,15 @@
             <div class="header" id="folderWindowheader"><img src="back.png" class="backButton" onclick="closeFolder()"><img src="x.png" class="xButton" onclick="closeWindow('folderWindow')"></div><div class="windowContent" id="folderContent">
         </div></div>
 
+        <div id="options" class="onTop animated" style="bottom: calc(-40% - 32px)">
+            <p>Options</p><br>
+            <p onclick="toggleOption('animations')"><img src="box-checked.png" class="checkbox" id="animationsCheckbox"> Enable animations</p>
+        </div>
         <div class="bottombar onTop" class="onTop"><p style="margin-right: 16px; vertical-align: center;" id="time">10:20 AM</p>
             <img src="notif.png" id="notifButton" onclick="toggleNotifs()">
         </div>
-        <div class="notifs onTop" id="notifs">
-            <div><p>Hello again!</p><p>This is a test notification!</p></div>
-            <div><p>More test notifications</p></div>
+        <div class="notifs onTop animated" id="notifs">
+            <div><p>No notifications...</p></div>
         </div>
     </div>
 </body>
