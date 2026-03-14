@@ -1,6 +1,5 @@
 // Wait for the DOM to be ready before accessing any elements.
 var files = {
-    name: "root",
     type: "folder",
     content: [{
         name: "warrens",
@@ -8,7 +7,7 @@ var files = {
         content: [{
             name: "Warrens",
             type: "image",
-            content: "warrens.png"
+            content: "fileAssets/warrens.png"
         }]
     },{
         name: "trivia",
@@ -24,7 +23,7 @@ var files = {
         },{
             name: "Deltarune",
             type: "text",
-            content: `Deltarune was originally supposed to release the paid version with chapters 3, 4, and 5, but had to be scaled down to just chapters 3 and 4.<br>The original concept for Deltarune came from a fever dream Toby Fox had in 2011 about the ending of a non-existant video game. After that, he wanted to make this video game. This means it's been about 15 years since the origin of Deltarune.<br>Spamton's dialogue seems shockingly similar to a commercial with a guy named Mike who was advertising Big Shot Soda, airing in 1997.<br>In the Spamton NEO fight, there was a glitch allowing you to spam charged shots without having to charge them. In a later update, instead of the glitch being patched out, using it instead made Spamton angry and caused the fight to be harder.<br>Every single voice line in Deltarune is done by Toby Fox.<br>Multiple songs like The Chase have a melody very similar to another song that was made by Toby Fox called Nightmare Knight, uploaded in early 2016 for Cucumber Quest. Nightmare Knight also parallels the song Black Knife, which data shows that composition for Black Knife was done in 2018.<br>Roulxs Kaard was originally going to have his own voice sound, however it was cut out for being too distracting. However, Tenna has a similar voice sound that's arguably more distracting. We want the Roulxs Kaard voice. Give it to us.`
+            content: `Deltarune was originally supposed to release the paid version with chapters 3, 4, and 5, but had to be scaled down to just chapters 3 and 4.<br>The original concept for Deltarune came from a fever dream Toby Fox had in 2011 about the ending of a non-existant video game. After that, he wanted to make this video game. This means it's been about 15 years since the origin of Deltarune.<br>A lot of Spamton's dialogue almost seemed to be referencing a commercial with a guy named Mike who was advertising Big Shot Soda, airing in 1997. Even now, there's so much names being called out from the very existance of the commercial that I doubt it's a coincidence, even if it's something small like an Easter Egg.<br>In the Spamton NEO fight, there was a glitch allowing you to spam charged shots without having to charge them. In a later update, instead of the glitch being patched out, using it instead made Spamton angry and caused the fight to be harder.<br>Every single voice line in Deltarune is done by Toby Fox.<br>Multiple songs like The Chase have a melody very similar to another song that was made by Toby Fox called Nightmare Knight, uploaded in early 2016 for Cucumber Quest. Nightmare Knight also parallels the song Black Knife, which data shows that composition for Black Knife was done in 2018.<br>Roulxs Kaard was originally going to have his own voice sound, however it was cut out for being too distracting. However, Tenna has a similar voice sound that's arguably more distracting. We want the Roulxs Kaard voice. Give it to us.`
         },{
             name: "Splatoon",
             type: "text",
@@ -37,7 +36,7 @@ var files = {
             name: "shifty",
             type: "folder",
             content: [{
-                name: "shiftyNotes",
+                name: "notes",
                 type: "text",
                 content: `The main character of his story. He hasn't appeared in the collapse yet, although he will any minute now. It will just take some time.<br><br>
                 - Cursed to be edited by like 20 people<br>
@@ -49,15 +48,21 @@ var files = {
             name: "mysteryMan",
             type: "folder",
             content: [{
-                name: "mmNotes",
+                name: "notes",
                 type: "text",
-                content: `Not Gaster.`
+                content: `A man who's lost his identity from a curse. He hasn't appeared in the collapse as well, but it's only a matter of time.
+                    <br><br>
+                    - Seemingly knowledgable about the way the multiverse works<br>
+                    - Impressive levels of tech and inventing<br>
+                    - Unrelated to Gaster
+                    <br><br>
+                    There isn't a need to do anything about him. The reason is quite obvious for those of us who are in charge of fate.`
             }]
         },{
             name: "jen",
             type: "folder",
             content: [{
-                name: "jenNotes",
+                name: "notes",
                 type: "text",
                 content: `A "normal human" who's managed to end up in a not-so-normal situation. It seems like she's quickly made friends, but how long until she moves on?<br><br>
                 - Good at hiding her true self<br>
@@ -69,9 +74,15 @@ var files = {
             name: "juniper",
             type: "folder",
             content: [{
-                name: "juniNotes",
+                name: "notes",
                 type: "text",
-                content: `A ghost that seems to be haunting Shifty's house in limbo. She's made friends with him, however she's unable to do much in her state. She hasn't appeared in the collapse either.<br><br>`
+                content: `A ghost that seems to be haunting Shifty's house in limbo. She's made friends with him, however she's unable to do much in her state. She hasn't appeared in the collapse either.
+                <br><br>
+                - A lot more powerful than the average ghost<br>
+                - Seems to have a crush on a certain someone<br>
+                - I keep forgetting what her deal is, seriously why is she such a forgettable person to me
+                <br><br>
+                She's already reached the tail end of her fate, now stuck in her current form. Although, if the one in charge decides otherwise, we could continue her fate from where it's left off.`
             }]
         },{
             name: "syntrex",
@@ -79,7 +90,13 @@ var files = {
             content: [{
                 name: "syntrexNotes",
                 type: "text",
-                content: ``
+                content: `A being capable of manipulating the very code of worlds themselves. Despite the main universe of the clustural collapse no longer being made of code, Syntrex still seems to be able to use a lot of his abilities in this new environment.
+                <br><br>
+                - Has already gained multiple servants which seem very loyal to his side<br>
+                - Capable of doing a lot of damage if he ever wanted to<br>
+                - Has some kind of goal it seems, although said goal is unknown at the moment
+                <br><br>
+                He seems to have been evil at some point, although he has defied his destined path and seems to want to do something else. Some negotiation could be used to bring him back on the right direction to his fate.`
             }]
         },{
             name: "omega&omex",
@@ -87,24 +104,107 @@ var files = {
             content: [{
                 name: "omegaNotes",
                 type: "text",
-                content: ``
+                content: `An alien ghost thing that seems to have been very, very, very lonely before the collapse. Sucks to suck.
+                <br><br>
+                - Seems to partner up and split off from others frequently<br>
+                - Very emotional in multiple circumstances<br>
+                - Has some decent level of strength, nothing boss-worthy but very capable in a fight
+                <br><br>
+                They seem to have regained a false hope they lost before the collapse. That hope must be kept alive while still not being granted, which is a delicate balance near impossible to achieve. However, it must be done.`
             },{
                 name: "omexNotes",
                 type: "text",
-                content: ``
+                content: `A variation of Omega that seems to have gained a human vessel. I assume this is an alternate universe form of Omega, although there's a lack of data from between the last time I saw Omega and the first time I saw Omex, so it's highly probable that Omega happened to possess a random body.
+                <br><br>
+                - Seems to be part of Syntrex's party<br>
+                - Slightly stronger than Omega in some ways, weaker in others<br>
+                - Probably has some level of immortality, but definitely not invincible
+                <br><br>
+                Their fate seems to be in the right direction, however based off the fact they seem to be one of Syntrex's most loyal servants, it would be best to keep an eye on them.`
             }]
         },{
             name: "vixie",
             type: "folder",
             content: [{
-                name: "vixieNotes",
+                name: "notes",
                 type: "text",
-                content: `Someone who originated from the same curse that came to Shifty.`
+                content: `Someone who is "from unknown origin" that happens to be just as editable as Shifty. Unlike him though, she's ended up in the collapse as well.
+                <br><br>
+                - Seems to have already completed a quest she was on<br>
+                - Was seen with Syntrex for a bit, could possibly be part of his team but right now it's umknown from this perspective<br>
+                - Can be either normal or the REALLY wrong definition of balanced
+                <br><br>
+                It's too early for her to have a fate yet. She will have one of her own very soon, at the moment her behavious should be watched in order to help determine her future.`
             }]
         },{
             name: "theVariousGraces",
             type: "folder",
-            content: []
+            content: [{
+                name: "iroNotes",
+                type: "text",
+                content: `A Traveler seemingly the "Ninjago" series but not exactly from the primary Ninjago universe, who's also ended up in the universe from the collapse. For some reason however, she doesn't seem to have realised it yet.
+                    <br><br>
+                    - Seems to have the ability of changing the colours of whatever she can touch.<br>
+                    - Quick to adapt to this new situation
+                    <br><br>
+                    No need to do anything about her, fate seems to be leading her right.`
+            },{
+                name: "graineNotes",
+                type: "text",
+                content: `An inkling-octoling hybrid... thing from the "Splatoon" series, which like all the other ones here, doesn't seem to be from the primary Splatoon universe. She hasn't been seen much, but we can work with the limited data we have.
+                    <br><br>
+                    - Very sensitive to the light of day<br>
+                    - Also sensitive to extreme noises<br>
+                    - Seriously, is this one of the only things I can make bullet points about???
+                    <br><br>
+                    Due to the limited data we have, we can't figure out if she has a concrete fate. Further investigation is required before any conclusions can be made.`
+            },{
+                name: "skyeStanciaNotes",
+                type: "text",
+                content: `A worker drone from the "Murder Drones" series but also not from the primary Murder Drones universe, who's fallen into the collapse as well. Part of her spirit is at Celeste Mountain at the moment.
+                    <br><br>
+                    - Resourceful and good with metals<br>
+                    - Has made a small portable forge to be able to forge small objects on the go<br>
+                    - Has managed to make herself a pair of wings using metal
+                    <br><br>
+                    She's already in the right direction, and if done right we could use the piece of her spirit for fulfilling other's fates.`
+            },{
+                name: "skyeToiletkoopaNotes",
+                type: "text",
+                content: `A human girl with what seems to be a Pixie companion. It seems like she's already met a few others, but she's still oblivious to many rules of this cluster and the universes in it.
+                    <br><br>
+                    - Quick to adapt to a new world<br>
+                    - Seems to be very talkative
+                    <br><br>
+                    She already seems to be going along her destined fate, looking further at her more would probably be unneeded, especially considering there may be other Graces we need to worry about.`
+            }]
+        },{
+            name: "entropy",
+            type: "folder",
+            content: [{
+                name: "notes",
+                type: "text",
+                content: `A monster which seems to be from "Undertale," but doesn't come from the Undertale universe itself. There seems to be many different forms of him throughout alternate universes.
+                <br><br>
+                - Seems to be very in tune with magic<br>
+                - Already died once or twice after entering the collapse, but managed to recover<br>
+                - Followed Syntrex, may possibly be part of his team?
+                <br><br>
+                Through the limited data gathered, he seems to be on the same direction that leads to his fate. However, more data is needed before anything can be concluded.`
+            }]
+        },{
+            name: "ravenpaw",
+            type: "folder",
+            content: [{
+                name: "notes",
+                type: "text",
+                content: `A loner from the "Warrior Cats" series who's gotten stranded in a universe that's not his, separated from what he's used to. Seems like he found a group of friends he's comfortable with, but whether that affects his longing for home remains to be seen.
+                    <br><br>
+                    - Easily stressed out in unfamiliar situations, but looks to be able to easily adapt and improvise.
+                    <br>- Wants to find Barley, his mate from his universe. Location unknown.
+                    <br><br>
+                    Data about his destiny is coming back as inconclusive. Further observation may be necessary.`
+            }]
         }]
     },{
         name: "notes",
@@ -129,7 +229,7 @@ var files = {
             name: "2026March9th",
             type: "html",
             content: `
-                <p>Proof that I won't be consistently making notes. Anyways, I've decided to finally go ahead and start working on those notes. I would use full HTML to format them better, but also... text files are more convenient. I'm saving the HTML for these notes specifically, in case I wanna add images and stuff. Sucks, but I can work with it. Making a few general improvements to the OS as well, adding some features and bug fixes and all that.<br>
+                <p>Proof that I won't be consistently making notes. Anyways, I've decided to finally go ahead and start working on the other files in the OS, try and find things to add in here and there. I would use full HTML to format the written files better, but also... text files are more convenient. I'm saving the HTML for these notes specifically, in case I wanna add images and stuff. Sucks, but I can work with it. Making a few general improvements to the OS as well, adding some features and bug fixes and all that.<br>
                 Also, Pokopia seems cool. Might try it sometime.
                 <br><br>
                 - █████</p>
@@ -150,7 +250,30 @@ var files = {
                 I've been thinking of having some kind of question of the day thing. Except, I'm not really known for being consistent with that kind of stuff. Or really anything at all. However, I could use that kind of thing to have updates on the site! Whenever I make an update, I'll start the non-daily thing. People will chalk it up to me being infrequent, which is true, but those who know will immediately notice that there's something new on the site!<br>
                 ... I should really add a use for the notifications.
                 <br><br>
-                - █████<br></p>`
+                - █████</p>`
+        },{
+            name: "2026March12th",
+            type: "html",
+            content: `<p>So I've been studying the recent clustural collapse, and <span class="fileLink" onclick="openFolder([2])">the people who got caught up in it.</span> It is very interesting to see how they adapt to this situation, how they interact, and more... as someone part of fate though, I do still have to do what I have to do. There are some people who I may have to stop, but there are also others I may help. I'll have to see who it'll be for each, I'll probably add a little thing at the bottom of each note to remember their course and how to adjust it to the path that aligns the best with fate.<br>
+                ... Jeez, how many Graces are there? 14? Guess I gotta get to work then...
+                <br><br>
+                - █████</p>`
+        },{
+            name: "2026March13th",
+            type: "html",
+            content: `<p>Wow, how this website has evolved, huh? I'm highly confident you didn't know this, but before the site looked something like this:</p>
+                <img src="fileAssets/ogSite.png">
+                <p>I know the image looks JPEG'd, and that's because it is. (Look, the only screenshot I had of the before was a JPEG, okay?) Either way, the site looks a lot different now than it was before. Now there's a file system, the notepad app, a new background which actually doesn't look much different on the image but it was definitely different, animations for the windows, and more. I'm proud of what I did to make this site just a little bit better every day. It's nice to work on stuff like this.
+                <br><br>
+                - █████</p>`
+        },{
+            name: "2026March14th",
+            type: "html",
+            content: `<p>Well, I think I'm done with the character files for now. Had to scale things down a bit (especially with how many Graces there are) but it should be done. I'm glad, especially considering that means this website is almost ready to show! I even added emojis to commemorate this! <img src="emojis/cool.png"><br>
+                ... I'm only now just realizing these emojis are really small.<br>
+                Either way, I'll mostly just polish things up here and there. Add things, fix bugs, etcetera. Once that's done, it's good to go!
+                <br><br>
+                - █████</p>`
         }]
     },{
         name: "",
@@ -335,13 +458,13 @@ function openFile(fileLocation){
         fileSearch = fileSearch.content[fileLocation[i]]
     }
     if(fileSearch.type == "image"){
-        openImage(fileSearch)
+        openImage(fileSearch, fileLocation)
     }
     if(fileSearch.type == "text"){
-        openText(fileSearch)
+        openText(fileSearch, fileLocation)
     }
     if(fileSearch.type == "html"){
-        openContent(fileSearch)
+        openContent(fileSearch, fileLocation)
     }
     return fileSearch
 }
@@ -366,18 +489,23 @@ function getCurrentFolder(){
 
 // Opening various files/folders
 function openFolder(openFolder = currentFolder){
+    if(currentFolder != openFolder){
+        currentFolder = openFolder
+    }
     var folderWindow = document.getElementById("folderContent");
     folderWindow.innerHTML = ""
     var folderContent = openFile(openFolder).content
     for(let i = 0; i < folderContent.length; i++){
-        folderWindow.innerHTML += "<p onclick='openRelativeFile(" + i + ")'><img class='fileIcons' src='" + folderContent[i].type + "-icon.png'>" + folderContent[i].name + "</p>"
+        folderWindow.innerHTML += "<p onclick='openRelativeFile(" + i + ")' class='hoverable'><img class='fileIcons' src='" + folderContent[i].type + "-icon.png'>" + folderContent[i].name + "</p>"
     }
     if(folderContent.length == 0){
         folderWindow.innerHTML = "<p>This folder is empty...</p>"
     }
     startWindowAnim(document.getElementById("folderWindow"))
+    selectWindow(document.getElementById("folderWindow"))
 }
-function openImage(currentFile){
+function openImage(currentFile, dir = []){
+    currentFile.name += "_"+dir.join("-")
     if(document.getElementById(currentFile.name + "Window") == null){
         mainBody.innerHTML += `<div id="`+currentFile.name+`Window" class="window" style="visibility: hidden;">
             <div class="header" id="`+currentFile.name+`Windowheader"><img src="x.png" class="xButton" onclick="closeWindow('`+currentFile.name+`Window')"></div>
@@ -388,7 +516,8 @@ function openImage(currentFile){
     loadWindows()
     openWindow(currentFile.name + "Window")
 }
-function openText(currentFile){
+function openText(currentFile, dir = []){
+    currentFile.name += "_"+dir.join("-")
     if(document.getElementById(currentFile.name + "Window") == null){
         mainBody.innerHTML += `<div id="`+currentFile.name+`Window" class="window" style="visibility: hidden;">
             <div class="header" id="`+currentFile.name+`Windowheader"><img src="x.png" class="xButton" onclick="closeWindow('`+currentFile.name+`Window')"></div>
@@ -403,7 +532,8 @@ function openText(currentFile){
     loadWindows()
     openWindow(currentFile.name + "Window")
 }
-function openContent(currentFile){
+function openContent(currentFile, dir = []){
+    currentFile.name += "_"+dir.join("-")
     if(document.getElementById(currentFile.name + "Window") == null){
         mainBody.innerHTML += `<div id="`+currentFile.name+`Window" class="window" style="visibility: hidden;">
             <div class="header" id="`+currentFile.name+`Windowheader"><img src="x.png" class="xButton" onclick="closeWindow('`+currentFile.name+`Window')"></div>

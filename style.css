@@ -12,6 +12,8 @@
 body{
     background-color: black;
     overflow: hidden;
+    inline-size: 100cqw;
+    block-size: 100cqh;
 }
 
 #body{
@@ -39,10 +41,29 @@ p{
     text-rendering: pixelated;
     image-rendering: pixelated;
 }
+.fileLink{
+    color: #6dbd16;
+    text-decoration: underline dashed #6dbd16 2px;
+}
+.fileLink:hover{
+    text-decoration-style: wavy;
+}
+.fileLink::selection{
+    color: #0f380f;
+}
 
 img{
     user-select: none;
     image-rendering: pixelated;
+}
+p img{
+    width: 16px;
+    height: 16px;
+    image-rendering: pixelated;
+    margin: 2px 4px;
+}
+a{
+    cursor: url("customCursor-click.png"), pointer;
 }
 
 .checkbox{
@@ -66,16 +87,26 @@ img{
     height: 32px;
     display: flex;
 }
-
-#notifButton{
-    position: absolute;
+.bottombar img{
     width: 32px;
     height: 32px;
-    right: 4px;
-    cursor: url("customCursor-click.png") pointer;
+    margin: 0px 4px;
 }
-#notifButton:hover{
+.bottombar img[src="chaticon.png"]:hover{
+    content: url("chaticon-hover.png");
+}
+
+.bottombar img[src="notif.png"]{
+    position: absolute;
+    right: 4px;
+    cursor: url("customCursor-click.png"), pointer;
+}
+.bottombar img[src="notif.png"]:hover{
     content: url("notif-click.png");
+}
+
+#time{
+    position: absolute;
 }
 
 .notifs div{
@@ -94,6 +125,16 @@ img{
     display: flex;
     flex-direction: column;
     justify-content: flex;
+}
+
+.hoverable{
+    cursor: url("customCursor-click.png"), pointer;
+}
+.hoverable:hover{
+    color: #6dbd16;
+}
+.hoverable:hover::selection{
+    color: #0f380f;
 }
 
 #options{
@@ -133,7 +174,7 @@ img{
     height: 64px;
     position: relative;
     margin: 16px;
-    cursor: url("customCursor-click.png") pointer;
+    cursor: url("customCursor-click.png"), pointer;
 }
 
 .window{
@@ -155,6 +196,10 @@ img{
     min-width: 196px;
     min-height: 128px;
     overflow: hidden auto;
+}
+.windowContent img{
+    max-width: 55vh;
+    height: auto;
 }
 .selected{
     border-color: #6dbd16;
@@ -179,7 +224,7 @@ img{
     height: 10px;
     image-rendering: pixelated;
     transform: translate(0, -4px);
-    cursor: url("customCursor-click.png") pointer;
+    cursor: url("customCursor-click.png"), pointer;
 }
 .xButton:hover{
     content: url("x-click.png");
@@ -190,17 +235,10 @@ img{
     height: 10px;
     image-rendering: pixelated;
     transform: translate(0, -4px);
-    cursor: url("customCursor-click.png") pointer;
+    cursor: url("customCursor-click.png"), pointer;
 }
 .backButton:hover{
     content: url("back-click.png");
-}
-
-.fileIcons{
-    width: 16px;
-    height: 16px;
-    image-rendering: pixelated;
-    margin: 2px 4px;
 }
 
 ::-webkit-scrollbar{
@@ -210,6 +248,7 @@ img{
 ::-webkit-scrollbar-thumb{
     background-color: #518d23;
     border: 3px solid #306230;
+    cursor: url("customCursor-click.png"), pointer;
 }
 ::-webkit-scrollbar-thumb:hover{
     background-color: #6dbd16;
@@ -249,8 +288,8 @@ img{
     height: 198px;
     margin: 32px;
 }
-@media (hover: none), (hover: on-demand){
-    .onTop{
+@media (hover: none), (pointer: coarse) {
+  .onTop{
         visibility: hidden;
     }
     .icons{
