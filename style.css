@@ -293,9 +293,9 @@ a{
     text-align: center;
 }
 .mobileDisclaimer img{
-    width: 198px;
-    height: 198px;
-    margin: 32px;
+    width: 35%;
+    height: auto;
+    margin: 5%;
 }
 @media (hover: none), (pointer: coarse) {
   .onTop{
@@ -314,6 +314,6 @@ a{
         visibility: visible;
     }
     p{
-        font-size: 48px;
+        font-size: 5cqh;
     }
 }

@@ -307,6 +307,12 @@ var files = {
                 Either way, I'll mostly just polish things up here and there. Add things, fix bugs, etcetera. Once that's done, it's good to go!
                 <br><br>
                 - █████</p>`
+        },{
+            name: "2026March15th",
+            type: "html",
+            content: `<p>Well, it looks like this thing is ready! Well, the site itself at least. I still have different things to do here and there to make it presentable to the people who will see it. As for what that means? Well, who knows? Either way, I feel like I'm gonna be writing these notes much less for the next week. Or maybe the same amount?
+                <br><br>
+                - █████</p>`
         }]
     },{
         name: "",
@@ -319,8 +325,8 @@ var files = {
                 type: "folder",
                 content: [{
                     name: "",
-                    type: "html",
-                    content: ""
+                    type: "text",
+                    content: "Long ago, the universe was once many pieces, fragments isolated by impenetrable walls. However, most people lacked any true free will, only acting out the whims of higher forces. All but a few, who sought to rebel against their destinies, and fought against these greater powers. After a long, grueling conflict, they emerged victorious. The walls, without anything to keep them in place, crumbled down, and the universe was made whole, and its people were bestowed free will for the first time."
                 }]
             }]
         }]
@@ -538,7 +544,7 @@ function openFolder(openFolder = currentFolder){
     selectWindow(document.getElementById("folderWindow"))
 }
 function openImage(currentFile, dir = []){
-    currentFile.name += "_"+dir.join("-")
+    currentFile.name = "w" + dir.join("-")
     if(document.getElementById(currentFile.name + "Window") == null){
         mainBody.innerHTML += `<div id="`+currentFile.name+`Window" class="window" style="visibility: hidden;">
             <div class="header" id="`+currentFile.name+`Windowheader"><img src="x.png" class="xButton" onclick="closeWindow('`+currentFile.name+`Window')"></div>
@@ -550,7 +556,7 @@ function openImage(currentFile, dir = []){
     openWindow(currentFile.name + "Window")
 }
 function openText(currentFile, dir = []){
-    currentFile.name += "_"+dir.join("-")
+    currentFile.name = "w" + dir.join("-")
     if(document.getElementById(currentFile.name + "Window") == null){
         mainBody.innerHTML += `<div id="`+currentFile.name+`Window" class="window" style="visibility: hidden;">
             <div class="header" id="`+currentFile.name+`Windowheader"><img src="x.png" class="xButton" onclick="closeWindow('`+currentFile.name+`Window')"></div>
@@ -566,7 +572,7 @@ function openText(currentFile, dir = []){
     openWindow(currentFile.name + "Window")
 }
 function openContent(currentFile, dir = []){
-    currentFile.name += "_"+dir.join("-")
+    currentFile.name = "w" + dir.join("-")
     if(document.getElementById(currentFile.name + "Window") == null){
         mainBody.innerHTML += `<div id="`+currentFile.name+`Window" class="window" style="visibility: hidden;">
             <div class="header" id="`+currentFile.name+`Windowheader"><img src="x.png" class="xButton" onclick="closeWindow('`+currentFile.name+`Window')"></div>
