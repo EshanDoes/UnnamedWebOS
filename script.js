@@ -5,7 +5,7 @@ var files = {
         name: "warrens",
         type: "folder",
         content: [{
-            name: "Warrens",
+            name: "Warren's",
             type: "image",
             content: "fileAssets/warrens.png"
         },{
@@ -544,44 +544,44 @@ function openFolder(openFolder = currentFolder){
     selectWindow(document.getElementById("folderWindow"))
 }
 function openImage(currentFile, dir = []){
-    currentFile.name = "w" + dir.join("-")
-    if(document.getElementById(currentFile.name + "Window") == null){
-        mainBody.innerHTML += `<div id="`+currentFile.name+`Window" class="window" style="visibility: hidden;">
-            <div class="header" id="`+currentFile.name+`Windowheader"><img src="x.png" class="xButton" onclick="closeWindow('`+currentFile.name+`Window')"></div>
+    var windowName = "w" + dir.join("-")
+    if(document.getElementById(windowName + "Window") == null){
+        mainBody.innerHTML += `<div id="`+windowName+`Window" class="window" style="visibility: hidden;">
+            <div class="header" id="`+windowName+`Windowheader"><img src="x.png" class="xButton" onclick="closeWindow('`+windowName+`Window')"></div>
                 <img src="`+currentFile.content+`">
         </div>`
         deselectWindow(document.getElementById("folderWindow"))
     }
     loadWindows()
-    openWindow(currentFile.name + "Window")
+    openWindow(windowName + "Window")
 }
 function openText(currentFile, dir = []){
-    currentFile.name = "w" + dir.join("-")
-    if(document.getElementById(currentFile.name + "Window") == null){
-        mainBody.innerHTML += `<div id="`+currentFile.name+`Window" class="window" style="visibility: hidden;">
-            <div class="header" id="`+currentFile.name+`Windowheader"><img src="x.png" class="xButton" onclick="closeWindow('`+currentFile.name+`Window')"></div>
+    var windowName = "w" + dir.join("-")
+    if(document.getElementById(windowName + "Window") == null){
+        mainBody.innerHTML += `<div id="`+windowName+`Window" class="window" style="visibility: hidden;">
+            <div class="header" id="`+windowName+`Windowheader"><img src="x.png" class="xButton" onclick="closeWindow('`+windowName+`Window')"></div>
             <div class="windowContent"><p contenteditable="true" spellcheck="false">`+currentFile.content+`</p></div>
         </div>`
         deselectWindow(document.getElementById("folderWindow"))
     } else{
-        document.getElementById(currentFile.name + "Window").innerHTML = `
-            <div class="header" id="`+currentFile.name+`Windowheader"><img src="x.png" class="xButton" onclick="closeWindow('`+currentFile.name+`Window')"></div>
+        document.getElementById(windowName + "Window").innerHTML = `
+            <div class="header" id="`+windowName+`Windowheader"><img src="x.png" class="xButton" onclick="closeWindow('`+windowName+`Window')"></div>
             <div class="windowContent"><p contenteditable="true" spellcheck="false">`+currentFile.content+`</p></div>`
     }
     loadWindows()
-    openWindow(currentFile.name + "Window")
+    openWindow(windowName + "Window")
 }
 function openContent(currentFile, dir = []){
-    currentFile.name = "w" + dir.join("-")
-    if(document.getElementById(currentFile.name + "Window") == null){
-        mainBody.innerHTML += `<div id="`+currentFile.name+`Window" class="window" style="visibility: hidden;">
-            <div class="header" id="`+currentFile.name+`Windowheader"><img src="x.png" class="xButton" onclick="closeWindow('`+currentFile.name+`Window')"></div>
+    var windowName = "w" + dir.join("-")
+    if(document.getElementById(windowName + "Window") == null){
+        mainBody.innerHTML += `<div id="`+windowName+`Window" class="window" style="visibility: hidden;">
+            <div class="header" id="`+windowName+`Windowheader"><img src="x.png" class="xButton" onclick="closeWindow('`+windowName+`Window')"></div>
                 <div class="windowContent">`+currentFile.content+`</div>
             </div>`
         deselectWindow(document.getElementById("folderWindow"))
     }
     loadWindows()
-    openWindow(currentFile.name + "Window")
+    openWindow(windowName + "Window")
 }
 
 function shakeBody(){
