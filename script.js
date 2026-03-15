@@ -8,6 +8,30 @@ var files = {
             name: "Warrens",
             type: "image",
             content: "fileAssets/warrens.png"
+        },{
+            name: "menu",
+            type: "folder",
+            content: [{
+                name: "HotBread",
+                type: "text",
+                content: `The number one meal from the restruant. It features a chicken fried steak with a sauce that is literally just every other sauce that exists combined, and a reverse hot dog placed like a cherry on top. This meal also kills you the fastest, with the consumer's heart immediately stopping as soon as it touches the tongue.`
+            },{
+                name: "ReverseHotDog",
+                type: "text",
+                content: `A sausage with the bread placed inside of the sausage instead of outside, as well as all the sauce used in the reverse hot dog. This is one of the few meals that isn't deadly by itself, which has recently been causing reconciderations as to whether or not this should stay on the menu.`
+            },{
+                name: "WarrensClassic2x2Burger",
+                type: "text",
+                content: `It seems like a regular burger on the outside, but there's a lot on the inside. There's iceberg lettuce that comes from an iceberg, ground beef which comes from the ground, salt, imitation (what in the world does the nutrition labels mean by that), and the biggest part is the number 1 grade mustard seeds.`
+            },{
+                name: "Greg",
+                type: "text",
+                content: `It's literally just a baby named Greg. Rumors say there's a guy being cloned in the kitchen over and over to make each Greg, however whether or not that's true is unconfirmed. This is usually ordered by beasts like caterpillars. Weird, disgusting, humanoid caterpillars.`
+            },{
+                name: "srettiFelppA",
+                type: "text",
+                content: `It's an apple fritter, except it was made in the mirror dimension that appears in "Kirby and the Amazing Mirror." There's seemingly no difference, but there could very well be an important reason as to why it's made in the mirror dimension every single time.`
+            }]
         }]
     },{
         name: "trivia",
@@ -50,13 +74,13 @@ var files = {
             content: [{
                 name: "notes",
                 type: "text",
-                content: `A man who's lost his identity from a curse. He hasn't appeared in the collapse as well, but it's only a matter of time.
+                content: `A man who's lost his identity from a curse. He hasn't appeared in the collapse as well, but it will happen very soon.
                     <br><br>
                     - Seemingly knowledgable about the way the multiverse works<br>
                     - Impressive levels of tech and inventing<br>
                     - Unrelated to Gaster
                     <br><br>
-                    There isn't a need to do anything about him. The reason is quite obvious for those of us who are in charge of fate.`
+                    There isn't a need to do anything about him.`
             }]
         },{
             name: "jen",
@@ -177,6 +201,15 @@ var files = {
                     - Seems to be very talkative
                     <br><br>
                     She already seems to be going along her destined fate, looking further at her more would probably be unneeded, especially considering there may be other Graces we need to worry about.`
+            },{
+                name: "jevilaNotes",
+                type: "text",
+                content: `A demon-born girl who, from what is seen, doesn't seem to be from any pre-existing universe. She's already adapted well enough to be able to rescue someone else.
+                    <br><br>
+                    - Seems to be able to teleport<br>
+                    - Seems to be the rebellious type
+                    <br><br>
+                    Not only has she defied her own fate, but she may prove a threat to the fate of others. Something must definitely be done, and eyes should be kept on her.`
             }]
         },{
             name: "entropy",

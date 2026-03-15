@@ -77,6 +77,7 @@ a{
     width: 100%;
     background-color: #518d23;
     border-top: 4px solid #306230;
+    padding-left: 172px;
     image-rendering: pixelated;
     shape-rendering: pixelated;
     text-rendering: pixelated;
@@ -92,7 +93,7 @@ a{
     height: 32px;
     margin: 0px 4px;
 }
-.bottombar img[src="chaticon.png"]:hover{
+.bottombar a:hover img[src="chaticon.png"]{
     content: url("chaticon-hover.png");
 }
 
@@ -107,6 +108,7 @@ a{
 
 #time{
     position: absolute;
+    left: 0px;
 }
 
 .notifs div{
@@ -175,6 +177,13 @@ a{
     position: relative;
     margin: 16px;
     cursor: url("customCursor-click.png"), pointer;
+}
+.icons img:hover{
+    filter:
+    drop-shadow(2px 0px 0 #6dbd16)
+    drop-shadow(-2px 0px 0 #6dbd16)
+    drop-shadow(0px -2px 0 #6dbd16)
+    drop-shadow(0px 2px 0 #6dbd16)
 }
 
 .window{
