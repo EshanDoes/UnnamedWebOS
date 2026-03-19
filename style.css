@@ -29,6 +29,14 @@ body{
     overflow: hidden;
     cursor: url("customCursor.png"), auto;
 }
+@media only screen and (min-height: 75cqw) {
+    #body{
+        width: 100cqw;
+        height: 75cqw;
+        left: 0;
+        top: calc(50cqh - 37.5cqw);
+    }
+}
 ::selection{
     background:#6dbd16;
 }
@@ -74,7 +82,7 @@ a{
 }
 
 .bottombar{
-    width: 100%;
+    width: calc(100% - 172px);
     background-color: #518d23;
     border-top: 4px solid #306230;
     padding-left: 172px;
@@ -99,7 +107,7 @@ a{
 
 .bottombar img[src="notif.png"]{
     position: absolute;
-    right: 4px;
+    right: 0px;
     cursor: url("customCursor-click.png"), pointer;
 }
 .bottombar img[src="notif.png"]:hover{
@@ -196,6 +204,7 @@ a{
     image-rendering: pixelated;
     shape-rendering: pixelated;
     position: absolute;
+    overflow: hidden;
 }
 .windowContent{
     width: max-content;

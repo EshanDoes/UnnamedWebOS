@@ -336,6 +336,7 @@ var options = {animations: true}
 
 var mainBody
 var animatedElements
+var gameIframe
 document.addEventListener('DOMContentLoaded', function() {
     var tickInterval = setInterval(tick, 100);
     var d = 0;
@@ -352,6 +353,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("time").innerHTML = currentTime;
     }
 
+    gameIframe = document.getElementById("gameFrame")
     loadWindows()
     mainBody = document.getElementById("body")
     closeFolder()
@@ -400,6 +402,8 @@ function dragElement(element) {
     // Step 8: Set up event listeners for mouse movement (`elementDrag`) and mouse button release (`closeDragElement`).
     document.onmouseup = stopDragging;
     document.onmousemove = dragElement;
+
+    gameIframe.style.pointerEvents = "none";
   }
 
   // Step 9: Define the `elementDrag` function to calculate the new position of the element based on mouse movement.
@@ -420,6 +424,8 @@ function dragElement(element) {
   function stopDragging() {
     document.onmouseup = null;
     document.onmousemove = null;
+
+    gameIframe.style.pointerEvents = "auto";
   }
 }
 
@@ -440,6 +446,7 @@ function loadWindows(){
         dragElement(document.getElementsByClassName("window")[i]);
         document.getElementsByClassName("window")[i].addEventListener("mousedown", () => selectWindow(document.getElementsByClassName("window")[i]));
     }
+    gameIframe.addEventListener("mousedown", () => selectWindow(document.getElementById("gameWindow")));
 }
 
 // Selecting/deselecting windows

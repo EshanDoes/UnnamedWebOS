@@ -17,6 +17,7 @@
         <div class="icons">
             <img src="notesIcon.png" onclick="openWindow('notesWindow')">
             <img src="filesIcon.png" onclick="openWindow('folderWindow')">
+            <img src="gameIcon.png" onclick="openWindow('gameWindow')">
         </div>
 
         <div id="notesWindow" class="window" style="visibility: hidden;">
@@ -26,6 +27,10 @@
         <div id="folderWindow" class="window" style="visibility: hidden;">
             <div class="header" id="folderWindowheader"><img src="back.png" class="backButton" onclick="closeFolder()"><img src="x.png" class="xButton" onclick="closeWindow('folderWindow')"></div><div class="windowContent" id="folderContent">
         </div></div>
+        <div id="gameWindow" class="window" style="visibility: hidden; padding: 10px 0px 0px 0px; height: 400px;">
+            <div class="header" id="gameWindowheader"><img src="x.png" class="xButton" onclick="closeWindow('gameWindow')"></div>
+            <iframe frameborder="0" src="https://itch.io/embed-upload/16855415?color=0f380f" allowfullscreen="" width="400" height="420" id="gameFrame"><a href="https://eshan-does.itch.io/unnamed-clicker">Play ██████ Clicker on itch.io</a></iframe>
+        </div>
 
         <div id="options" class="onTop animated" style="bottom: calc(-40% - 32px)">
             <p>Options</p><br>
@@ -33,7 +38,7 @@
         </div>
         <div class="bottombar onTop" class="onTop"><p style="margin-right: 16px; vertical-align: center;" id="time" class="">10:20 AM</p><span style="width: 4px; height: 100%; background-color: #306230;"></span>
             <a href="https://discord.gg/ENChZjqFBx"><img src="chaticon.png"></a>
-            <img src="notif.png" onclick="toggleNotifs()">
+            <!--<img src="notif.png" onclick="toggleNotifs()">-->
         </div>
         <div class="notifs onTop animated" id="notifs">
             <div><p>No notifications...</p></div>
