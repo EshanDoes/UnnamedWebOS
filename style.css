@@ -49,6 +49,20 @@ p{
     text-rendering: pixelated;
     image-rendering: pixelated;
 }
+h1{
+    color: #0f380f;
+    font-size: 48px;
+    font-family: DD;
+    text-align: center;
+    margin: 6px;
+    text-rendering: pixelated;
+}
+small{
+    font-size: 16px;
+    font-family: DD;
+    text-rendering: pixelated;
+    color: #306230;
+}
 .fileLink{
     color: #6dbd16;
     text-decoration: underline dashed #6dbd16 2px;
@@ -70,9 +84,7 @@ p img{
     image-rendering: pixelated;
     margin: 2px 4px;
 }
-a{
-    cursor: url("customCursor-click.png"), pointer;
-}
+a {cursor: url("customCursor-click.png"), pointer}
 
 .checkbox{
     width: 16px;
@@ -137,16 +149,6 @@ a{
     justify-content: flex;
 }
 
-.hoverable{
-    cursor: url("customCursor-click.png"), pointer;
-}
-.hoverable:hover{
-    color: #6dbd16;
-}
-.hoverable:hover::selection{
-    color: #0f380f;
-}
-
 #options{
     background-color: #518d23;
     padding: 4px;
@@ -157,16 +159,6 @@ a{
     left: 0;
     bottom: 32px;
     height: 40%;
-}
-
-.onTop{
-    z-index: calc(infinity);
-}
-.animated{
-    transition: 0.4s ease-in-out;
-}
-.unanimated{
-    transition: 0s ease-in-out;
 }
 
 .icons{
@@ -284,6 +276,28 @@ a{
     text-decoration: underline dashed #0f380f;
 }
 
+.onTop{
+    z-index: calc(infinity);
+}
+.animated{
+    transition: 0.4s ease-in-out;
+}
+.unanimated{
+    transition: 0s ease-in-out;
+}
+.hoverable{
+    cursor: url("customCursor-click.png"), pointer;
+}
+.hoverable:hover{
+    color: #6dbd16;
+}
+.hoverable:hover::selection{
+    color: #0f380f;
+}
+.fill{
+    width: 100%;
+}
+
 .mobileDisclaimer{
     visibility: hidden;
     position: absolute;
@@ -318,6 +332,7 @@ a{
         height: 100%;
         aspect-ratio: auto;
         left: 0;
+        top: 0;
     }
     .mobileDisclaimer{
         visibility: visible;

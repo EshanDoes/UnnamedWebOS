@@ -31,8 +31,19 @@
             <div class="header" id="gameWindowheader"><img src="x.png" class="xButton" onclick="closeWindow('gameWindow')"></div>
             <iframe frameborder="0" src="https://itch.io/embed-upload/16855415?color=0f380f" allowfullscreen="" width="400" height="420" id="gameFrame"><a href="https://eshan-does.itch.io/unnamed-clicker">Play ██████ Clicker on itch.io</a></iframe>
         </div>
+        <div id="newsWindow" class="window" style="visibility: hidden;">
+            <div class="header" id="newsWindowheader"><img src="x.png" class="xButton" onclick="closeWindow('newsWindow')"></div><div class="windowContent">
+                <img src="fileAssets/news/test/header.png" class="fill">
+                <h1>BREAKING NEWS: SOMETHING HAPPENED</h1>
+                <p>Lorem ipsum dalor sit amet or something I dunno I barely have any placeholder text to use.</p>
+                <br>
+                <p>Man, that TADC episode was crazy, huh? I can't believe that Caine █████████ █████████ ███████ █ ██████████ ██████ and then Kinger █████████ ████████ ████████ ███████ ████ and honestly Jax's ██████████ ████████ was really crazy</p>
+                <br><br>
+                <p style="text-align: center;"><small>Article 0 - March 21st, 2026 - Updated every Friday</small></p>
+                <!--<p style="text-align: center;"><small>All articles taken from Mystery Man's Hobbyist News</small></p>-->
+        </div></div>
 
-        <div id="options" class="onTop animated" style="bottom: calc(-40% - 32px)">
+        <div id="options" class="onTop animated" style="bottom: calc(-40% - 32px); visibility: hidden;">
             <p>Options</p><br>
             <p onclick="toggleOption('animations')"><img src="box-checked.png" class="checkbox" id="animationsCheckbox"> Enable animations</p>
         </div>
@@ -40,7 +51,7 @@
             <a href="https://discord.gg/ENChZjqFBx"><img src="chaticon.png"></a>
             <!--<img src="notif.png" onclick="toggleNotifs()">-->
         </div>
-        <div class="notifs onTop animated" id="notifs">
+        <div class="notifs onTop animated" id="notifs" style="visibility: hidden;">
             <div><p>No notifications...</p></div>
         </div>
     </div>

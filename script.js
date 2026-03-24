@@ -313,6 +313,21 @@ var files = {
             content: `<p>Well, it looks like this thing is ready! Well, the site itself at least. I still have different things to do here and there to make it presentable to the people who will see it. As for what that means? Well, who knows? Either way, I feel like I'm gonna be writing these notes much less for the next week. Or maybe the same amount?
                 <br><br>
                 - █████</p>`
+        ,},{
+            name: "2026March19th",
+            type: "html",
+            content: "<p><span class='fileLink' onclick='openWindow(\"gameWindow\")'>Vimeo gane</span><br><br>- █████</p>"
+        },{
+            name: "2026March21st",
+            type: "html",
+            content: `<p>Well, uh. When you think about it, if someone outside of the target audience found out about this, how would they understand literally anything? Actually, what even makes this any special from anything else? All I have are files, a notepad, and <span class='fileLink' onclick='openWindow(\"gameWindow\")'>vimeo gane</span>. I think I'm gonna add the news or something. Would be a cool idea to have something like that, just so I can keep up with the latest updates. I could add an article in there every week. Might be a decent idea.
+                <br>Wait, what was I talking about again? Oh yeah, context. Gonna need to work on that at some point.
+                <br><br>
+                - █████</p>`
+        },{
+            name: "2026March23rd",
+            type: "html",
+            content: "<p>Okay, when I said I'd add the news, I meant that literally. I decided to add my favourite weekly news source, Mystery Man's Hobbyist News, onto the site, because I've got nothing better to do. Honestly, I do love Mystery Man's Hobbyist News though, mostly because the guy behind it fits with all my biases, and does the proper research as well. It's like his tastes are personalized to be exactly like mine's, it's crazy how alike we are even despite the history we have.<br><br>- █████</p>"
         }]
     },{
         name: "",
@@ -403,7 +418,9 @@ function dragElement(element) {
     document.onmouseup = stopDragging;
     document.onmousemove = dragElement;
 
-    gameIframe.style.pointerEvents = "none";
+    for(let i = 0; i < document.getElementsByTagName("iframe").length; i++){
+        document.getElementsByTagName("iframe")[i].style.pointerEvents = "none";
+    }
   }
 
   // Step 9: Define the `elementDrag` function to calculate the new position of the element based on mouse movement.
@@ -425,7 +442,9 @@ function dragElement(element) {
     document.onmouseup = null;
     document.onmousemove = null;
 
-    gameIframe.style.pointerEvents = "auto";
+    for(let i = 0; i < document.getElementsByTagName("iframe").length; i++){
+        document.getElementsByTagName("iframe")[i].style.pointerEvents = "auto";
+    }
   }
 }
 
@@ -446,7 +465,6 @@ function loadWindows(){
         dragElement(document.getElementsByClassName("window")[i]);
         document.getElementsByClassName("window")[i].addEventListener("mousedown", () => selectWindow(document.getElementsByClassName("window")[i]));
     }
-    gameIframe.addEventListener("mousedown", () => selectWindow(document.getElementById("gameWindow")));
 }
 
 // Selecting/deselecting windows
