@@ -488,14 +488,16 @@ function closeWindow(closedWindow){
 function openWindow(openedWindow){
     var openingWindow = document.getElementById(openedWindow)
     openingWindow.style.visibility = "visible";
-    openingWindow.style.top = window.event.clientY-(window.innerHeight-mainBody.getBoundingClientRect().height)/2 + "px";
-    openingWindow.style.left = window.event.clientX-(window.innerWidth-mainBody.getBoundingClientRect().width)/2 + "px";
-    if(mainBody.getBoundingClientRect().height-openingWindow.getBoundingClientRect().bottom < 36){
-        openingWindow.style.top = mainBody.getBoundingClientRect().height-openingWindow.getBoundingClientRect().height-46 + "px"
+    var windowTop = window.event.clientY-(window.innerHeight-mainBody.getBoundingClientRect().height)/2
+    var windowLeft = window.event.clientX-(window.innerWidth-mainBody.getBoundingClientRect().width)/2
+    if(mainBody.getBoundingClientRect().height-(windowTop+openingWindow.getBoundingClientRect().height) < 36){
+        windowTop = mainBody.getBoundingClientRect().height-openingWindow.getBoundingClientRect().height-46
     }
-    if(mainBody.getBoundingClientRect().width-openingWindow.getBoundingClientRect().right < 0){
-        openingWindow.style.left = mainBody.getBoundingClientRect().width-openingWindow.getBoundingClientRect().width-6 + "px"
+    if(mainBody.getBoundingClientRect().width-(windowLeft+openingWindow.getBoundingClientRect().width) < 0){
+        windowLeft = mainBody.getBoundingClientRect().width-openingWindow.getBoundingClientRect().width-6
     }
+    openingWindow.style.top = windowTop + "px";
+    openingWindow.style.left = windowLeft + "px";
     selectWindow(openingWindow)
     startWindowAnim(openingWindow)
 }
