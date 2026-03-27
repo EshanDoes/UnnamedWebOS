@@ -81,6 +81,31 @@ var files = {
                     - Unrelated to Gaster
                     <br><br>
                     There isn't a need to do anything about him.`
+            },{
+                name: "randomMultiverseNotes",
+                type: "html",
+                content: `<p>The following is a bunch of notes that Mystery Man wrote seemingly about the multiverse. It seems like he was doing research on how it works, maybe out of curiosity or because of his curse. This does explain his knowledge on the multiverse, although the fact he happened to get just the right opinions from his sources is crazy.</p>
+                <br><br><br>
+                <h1>A Universe</h1>
+                <p>- Each universe seems to have different laws (not in the legal way, in the "laws of physics" way)
+                <br>- Scientists theorize that these universes also have laws on how they can interact with other universes
+                <br>- Those scientists say that there are universes we'll never be able to see because we're limited by the laws from our universe
+                <br>- There isn't any actual proof whether or not this is true, but I think I agree with this, it does slightly explain a few things</p>
+                <br>
+                <h1>A Cluster</h1>
+                <p>- A cluster is a group of universes that have the same laws and are essentially fully compatible with each other
+                <br>- Some clusters are able to interact with other clusters if their laws make way for it
+                <br>- These clusters actually seem to have been discovered recently when the multiverse was scientifically proven factual, which means there's a lot of debate about them, down to their own name
+                <br>- Some scientists even belive it's actually multiverses in an omegaverse instead of groups of universes in a multiverse
+                <br>- I prefer to think of it as clusters in a universe, but everything is still unfolding and so far that explanation doesn't seem to be much different from the multiverses in an omegaverse theory</p>
+                <br>
+                <h1>Anti-Voids</h1>
+                <p>- Anti-Voids are the leftover space between universes, at least in our cluster and some of our neighboring clusters
+                <br>- They don't have any laws, only being shaped by the first mind that happened to be in the Anti-Void (again, might be very different depending on the cluster or might not even exist in a lot of them)
+                <br>- Nobody's actually been to an Anti-Void, they've only been scientifically proven to be true like with clusters
+                <br>- There also isn't an actual name for Anti-Voids yet, I just call them that because it's like the Anti-Voids from those Undertale AUs
+                <br>- Anyways, the laws that come from being the first in an Anti-Void only stretch so far in the area, but the distance they go is still gigantic
+                <br>- In fact, it's why I refer to it as Anti-Voids, instead of just one Anti-Void, because the size of each area that people would have control over is so large that it's like each is its own place in of itself</p>`
             }]
         },{
             name: "jen",
@@ -328,6 +353,14 @@ var files = {
             name: "2026March23rd",
             type: "html",
             content: "<p>Okay, when I said I'd add the news, I meant that literally. I decided to add my favourite weekly news source, Mystery Man's Hobbyist News, onto the site, because I've got nothing better to do. Honestly, I do love Mystery Man's Hobbyist News though, mostly because the guy behind it fits with all my biases, and does the proper research as well. It's like his tastes are personalized to be exactly like mine's, it's crazy how alike we are even despite the history we have.<br><br>- █████</p>"
+        },{
+            name: "2026 March 25th",
+            type: "html",
+            content: `<p>I am sick and tired of pretending these file names are limited by anything. Actually, no I'm not, I like naming files like this.<img src='emojis/smile.png'><br>
+            ... I'm starting to realize how sarcastic that sentence sounds with the emoji.<br>
+            Anyways, I'm running out of things to write, so I might as well actually have a way for you to run a function I wrote a few weeks ago but never actually put as, like, a button or anything. <span class='fileLink' onclick='shakeBody()'>Here it is.</span>
+            <br><br>
+            - █████</p>`
         }]
     },{
         name: "",
@@ -453,11 +486,18 @@ function closeWindow(closedWindow){
     document.getElementById(closedWindow).style.visibility = "hidden";
 }
 function openWindow(openedWindow){
-    document.getElementById(openedWindow).style.visibility = "visible";
-    document.getElementById(openedWindow).style.top = window.event.clientY + "px";
-    document.getElementById(openedWindow).style.left = window.event.clientX-(window.innerWidth-window.innerHeight*(4/3))/2 + "px";
-    selectWindow(document.getElementById(openedWindow))
-    startWindowAnim(document.getElementById(openedWindow))
+    var openingWindow = document.getElementById(openedWindow)
+    openingWindow.style.visibility = "visible";
+    openingWindow.style.top = window.event.clientY-(window.innerHeight-mainBody.getBoundingClientRect().height)/2 + "px";
+    openingWindow.style.left = window.event.clientX-(window.innerWidth-mainBody.getBoundingClientRect().width)/2 + "px";
+    if(mainBody.getBoundingClientRect().height-openingWindow.getBoundingClientRect().bottom < 36){
+        openingWindow.style.top = mainBody.getBoundingClientRect().height-openingWindow.getBoundingClientRect().height-46 + "px"
+    }
+    if(mainBody.getBoundingClientRect().width-openingWindow.getBoundingClientRect().right < 0){
+        openingWindow.style.left = mainBody.getBoundingClientRect().width-openingWindow.getBoundingClientRect().width-6 + "px"
+    }
+    selectWindow(openingWindow)
+    startWindowAnim(openingWindow)
 }
 function loadWindows(){
     // Make the window elements draggable one by one.

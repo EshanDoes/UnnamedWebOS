@@ -84,7 +84,11 @@ p img{
     image-rendering: pixelated;
     margin: 2px 4px;
 }
+p img::selection{
+    background-color: #6dbd16;
+}
 a {cursor: url("customCursor-click.png"), pointer}
+iframe{position: sticky}
 
 .checkbox{
     width: 16px;
