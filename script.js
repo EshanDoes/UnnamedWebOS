@@ -67,6 +67,10 @@ var files = {
                 - Knows many of the others in the files<br>
                 - Still friends with Mystery Man<br><br>
                 He's already well along his destined path, but he might bring others to change course. It's best to keep an eye on him.`
+            },{
+                name: "ocsnCard",
+                type: "image",
+                content: "fileAssets/ocsnCards/shifty.png"
             }]
         },{
             name: "mysteryMan",
@@ -106,6 +110,10 @@ var files = {
                 <br>- There also isn't an actual name for Anti-Voids yet, I just call them that because it's like the Anti-Voids from those Undertale AUs
                 <br>- Anyways, the laws that come from being the first in an Anti-Void only stretch so far in the area, but the distance they go is still gigantic
                 <br>- In fact, it's why I refer to it as Anti-Voids, instead of just one Anti-Void, because the size of each area that people would have control over is so large that it's like each is its own place in of itself</p>`
+            },{
+                name: "ocsnCard",
+                type: "image",
+                content: "fileAssets/ocsnCards/mysteryMan.png"
             }]
         },{
             name: "jen",
@@ -118,6 +126,10 @@ var files = {
                 - Quick to adapt to a new world<br>
                 - Still loves nature<br><br>
                 No need to do anything about her. Fate is already bringing her through her course.`
+            },{
+                name: "ocsnCard",
+                type: "image",
+                content: "fileAssets/ocsnCards/jen.png"
             }]
         },{
             name: "juniper",
