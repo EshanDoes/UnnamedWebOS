@@ -121,13 +121,16 @@ iframe{position: sticky}
     content: url("chaticon-hover.png");
 }
 
-.bottombar img[src="notif.png"]{
+#notifButton{
     position: absolute;
     right: 0px;
     cursor: url("customCursor-click.png"), pointer;
 }
-.bottombar img[src="notif.png"]:hover{
+#notifButton:hover{
     content: url("notif-click.png");
+}
+[src="notifNew.png"]#notifButton:hover{
+    content: url("notifNew-click.png")
 }
 
 #time{

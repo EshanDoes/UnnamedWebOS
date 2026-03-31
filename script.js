@@ -1,5 +1,5 @@
 // Wait for the DOM to be ready before accessing any elements.
-var files = {
+const files = {
     type: "folder",
     content: [{
         name: "warrens",
@@ -130,6 +130,24 @@ var files = {
                 name: "ocsnCard",
                 type: "image",
                 content: "fileAssets/ocsnCards/jen.png"
+            },{
+                name: "jen&shiftyChatLogs",
+                type: "text",
+                content: `Shifty: Alright we need to talk about that link thing<br>
+                    Jen: Huh? What link thing? Did I miss something? ┌(。Д。)┐<br>
+                    Shifty: Check your profile<br>
+                    Jen: Okay?<br>
+                    Jen: Why is there a link to a website? I don't remember posting that? o_o<br>
+                    Shifty: Same thing happened to me as well<br>
+                    Shifty: I have a feeling it might be Eshan and his tricks again<br>
+                    Jen: Are you sure it's him?<br>
+                    Jen: I think I've seen him a few times and he just looks like another guy... (￣、￣)<br>
+                    Jen: Sure, he may look like a cardboard cutout floating in 3D space, but there's a lot weirder, right?<br>
+                    Shifty: Jen if there's one thing I can say it's that you shouldn't trust Eshan<br>
+                    Shifty: You have no idea what he's done to me<br>
+                    Jen: Okay, but I really think we should be doing a little investigating first... (ˉ▽ˉ；)<br>
+                    Shifty: Alright that sounds like a good idea but if there's nothing then odds are it's still Eshan<br>
+                    Shifty: He's really good at covering his tracks`
             }]
         },{
             name: "juniper",
@@ -279,7 +297,7 @@ var files = {
     },{
         name: "notes",
         type: "folder",
-        content: [{
+        content: [{name: "2026march", type: "folder", content: [{
             name: "2026March4th",
             type: "html",
             content: `
@@ -373,7 +391,27 @@ var files = {
             Anyways, I'm running out of things to write, so I might as well actually have a way for you to run a function I wrote a few weeks ago but never actually put as, like, a button or anything. <span class='fileLink' onclick='shakeBody()'>Here it is.</span>
             <br><br>
             - █████</p>`
-        }]
+        },{
+            name: "2026March27th",
+            type: "html",
+            content: `<p>I know I already said I'm sick and tired of something before, but I am sick and tired of having these notes just be thrown into one folder. As such, I decided to organize them by month. To anyone reading this, you're welcome!<img src='emojis/smile.png'>
+                <br><br>
+                - █████</p>`
+        },{
+            name: "2026March30th",
+            type: "html",
+            content: `<p>After all this time, I finally showed the website to the people I was planning to show it to last night! Nobody noticed! I am so happy! Yippie!<br>
+                In all seriousness though, it's very much a mix of relief and wanting to slam my head on my desk. On one hand, I was trying so hard to make an excuse for this site to be sent, and after all that the people I was trying to get to see it still don't know it existed. Not only that, but the people who aren't even part of this group see this site and have no idea what anything here means, and I have to make accomodations for them as well, which is a little difficult considering the amount of context needed to understand this stuff.<br>
+                Oon the other hand though, it really gives me more time to work on this site. It still needs a bit more fleshing out, and while I will try again to get it shown to that group of people in a few days I'll also be working on polishing this site in the meantime. There's always more to do after all. Maybe I could add a terminal? No, can't think of anything special about that...
+                <br><br>
+                - █████</p>`
+        }
+        ]},{name: "2026april", type: "folder", content:[{
+            name: "2026April1st",
+            type: "html",
+            content: `<p>Placeholder for when I actually use this folder</p>`
+        }
+        ]}]
     },{
         name: "",
         type: "folder",
@@ -422,14 +460,32 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 var notifsHidden = true;
+var notifsOnStandby = []
 function toggleNotifs(){
     if(notifsHidden){
         document.getElementById("notifs").style.right = "0px";
+        document.getElementById("notifs").style.visibility = "visible";
+        document.getElementById("notifButton").src = "notif.png"
         notifsHidden = false;
+        if(notifsOnStandby != []){
+            for(let i = 0; i < notifsOnStandby.length; i++){
+                document.getElementById("notifs").innerHTML += "<div>" + notifsOnStandby[i] + "</div>"
+            }
+            notifsOnStandby = []
+        }
     }else{
         document.getElementById("notifs").style.right = "-480px";
+        document.getElementById("notifs").style.visibility = "hidden";
         notifsHidden = true;
     }
+}
+function addNotif(newNotif){
+    if(notifsHidden){
+        document.getElementById("notifs").innerHTML += "<div>" + newNotif + "</div>"
+    } else{
+        notifsOnStandby.push(newNotif)
+    }
+    document.getElementById("notifButton").src = "notifNew.png"
 }
 
 var selectedWindow = undefined
@@ -542,7 +598,7 @@ var lastUpdate = null
 var delta = 0
 var animatedWindow
 var animationOffset = 8
-var animationLength = 150.0
+const animationLength = 150.0
 function startWindowAnim(element){
     if(options.animations){
         animatedWindow = element
