@@ -134,18 +134,18 @@ const files = {
                 name: "jen&shiftyChatLogs",
                 type: "text",
                 content: `Shifty: Alright we need to talk about that link thing<br>
-                    Jen: Huh? What link thing? Did I miss something? ┌(。Д。)┐<br>
+                    Jen: Huh? What link thing? Did I miss something? ┌(. O . )┐<br>
                     Shifty: Check your profile<br>
                     Jen: Okay?<br>
                     Jen: Why is there a link to a website? I don't remember posting that? o_o<br>
                     Shifty: Same thing happened to me as well<br>
                     Shifty: I have a feeling it might be Eshan and his tricks again<br>
                     Jen: Are you sure it's him?<br>
-                    Jen: I think I've seen him a few times and he just looks like another guy... (￣、￣)<br>
+                    Jen: I think I've seen him a few times and he just looks like another guy... (￣. ￣)<br>
                     Jen: Sure, he may look like a cardboard cutout floating in 3D space, but there's a lot weirder, right?<br>
                     Shifty: Jen if there's one thing I can say it's that you shouldn't trust Eshan<br>
                     Shifty: You have no idea what he's done to me<br>
-                    Jen: Okay, but I really think we should be doing a little investigating first... (ˉ▽ˉ；)<br>
+                    Jen: Okay, but I really think we should be doing a little bit of investigating first... (\`v\` ;)<br>
                     Shifty: Alright that sounds like a good idea but if there's nothing then odds are it's still Eshan<br>
                     Shifty: He's really good at covering his tracks`
             }]
@@ -402,9 +402,25 @@ const files = {
             type: "html",
             content: `<p>After all this time, I finally showed the website to the people I was planning to show it to last night! Nobody noticed! I am so happy! Yippie!<br>
                 In all seriousness though, it's very much a mix of relief and wanting to slam my head on my desk. On one hand, I was trying so hard to make an excuse for this site to be sent, and after all that the people I was trying to get to see it still don't know it existed. Not only that, but the people who aren't even part of this group see this site and have no idea what anything here means, and I have to make accomodations for them as well, which is a little difficult considering the amount of context needed to understand this stuff.<br>
-                Oon the other hand though, it really gives me more time to work on this site. It still needs a bit more fleshing out, and while I will try again to get it shown to that group of people in a few days I'll also be working on polishing this site in the meantime. There's always more to do after all. Maybe I could add a terminal? No, can't think of anything special about that...
+                On the other hand though, it really gives me more time to work on this site. It still needs a bit more fleshing out, and while I will try again to get it shown to that group of people in a few days I'll also be working on polishing this site in the meantime. There's always more to do after all. Maybe I could add a terminal? No, can't think of anything special about that...
                 <br><br>
                 - █████</p>`
+        },{
+            name: "2026March31st",
+            type: "html",
+            content: `<p>Okay Jen's emoticons are DRIVING ME INSANE</p>
+            <p>It's not that the use of emoticons is bad, it's just that the emoticons DON'T WORK WELL WITH THE PIXEL FONMT<br>
+            I WANT IT TO BE PIXELATED<br>
+            WHY DOES THIS ； CHARACTER HAVE TO NOT BE PIXELATED<br>
+            ; EXISTS<br>
+            WHY<br>
+            I'M LITERALLY MODIFYING THEIR CHAT LOGS IN THE FILES TO MAKE THE EMOTICONS COMPATIBLE WITH THE FONT<br>
+            WHY DOES IT HAVE TO BE SO HAAAAARD</p>
+            <p>Anyways, rant aside, I'm still working on this. I just need to add the first article from Mystery Man's Hobbyist News onto the site, and then I'll try again to make them notice this site exists.
+            <br><br>
+            - █████</p>
+            <p>P.S. Hold on I think I'm cooking with these emoticons</p>
+            <p>P.P.S. Nevermind they suck</p>`
         }
         ]},{name: "2026april", type: "folder", content:[{
             name: "2026April1st",
