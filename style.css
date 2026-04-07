@@ -2,43 +2,70 @@
   font-family: DD;
   src: url('DigitalDisco.ttf');
 }
-
 @font-face{
   font-family: DD-thin;
   src: url('DigitalDisco-Thin.ttf');
 }
 
+/* Variables for consistency */
+:root{
+    --bodyWidth: calc(100cqh * 4 / 3);
+    --bodyHeight: 100cqh;
+    --bodyTop: 0%;
+    --bodyLeft: calc(50cqw - 100cqh * 2 / 3);
+
+    --borderWidth: calc((100cqw - var(--bodyWidth)) / 2)
+    --borderHeight: calc((100cqh - var(--bodyHeight)) / 2)
+}
+@media only screen and (min-height: 75cqw) {
+    :root{
+        --bodyWidth: 100cqw;
+        --bodyHeight: 75cqw;
+        --bodyLeft: 0;
+        --bodyTop: calc(50cqh - 37.5cqw);
+    }
+}
 
 body{
     background-color: black;
     overflow: hidden;
-    inline-size: 100cqw;
-    block-size: 100cqh;
 }
 
 #body{
     background-color: #0f380f;
     background-image: url("bg.png");
+    background-size: 4.8px;
+    image-rendering: pixelated;
+    position: absolute;
+    overflow: hidden;
+    cursor: url("customCursor.png"), auto;
+    z-index: 0;
+
+    top: var(--bodyTop);
+    left: var(--bodyLeft);
+    height: var(--bodyHeight);
+    width: var(--bodyWidth);
+}
+#bgOverlay{
+    background-image: url("bg.png");
     background-size: 3.2px;
     image-rendering: pixelated;
     position: absolute;
-    top: 0%;
-    left: calc(50cqw - 100cqh * 2 / 3);
-    height: 100cqh;
-    width: calc(100cqh * 4 / 3);
-    overflow: hidden;
-    cursor: url("customCursor.png"), auto;
-}
-@media only screen and (min-height: 75cqw) {
-    #body{
-        width: 100cqw;
-        height: 75cqw;
-        left: 0;
-        top: calc(50cqh - 37.5cqw);
-    }
+    pointer-events: none;
+    opacity: 0.15;
+
+    top: var(--bodyTop);
+    left: var(--bodyLeft);
+    height: var(--bodyHeight);
+    width: var(--bodyWidth);
 }
 ::selection{
     background:#6dbd16;
+}
+:focus{
+    outline: none;
+    border: none;
+    box-shadow: none;
 }
 
 p{
@@ -196,7 +223,7 @@ iframe{position: sticky}
 .window{
     background-color: #518d23;
     padding: 4px;
-    padding-top: 16px;
+    padding-top: 20px;
     width: max-content;
     height: max-content;
     border: 2px solid #306230;
@@ -208,8 +235,8 @@ iframe{position: sticky}
 .windowContent{
     width: max-content;
     height: max-content;
-    max-width: 55vh;
-    max-height: 65vh;
+    max-width: calc(var(--bodyHeight) * 0.55);
+    max-height: calc(var(--bodyHeight) * 0.65);
     min-width: 196px;
     min-height: 128px;
     overflow: hidden auto;
@@ -228,7 +255,7 @@ iframe{position: sticky}
     top: 0%;
     left: 0%;
     width: 100%;
-    height: 10px;
+    height: 14px;
     background-color: #306230;
     text-align: right;
 }
@@ -236,23 +263,14 @@ iframe{position: sticky}
     border-color: #6dbd16;
 }
 
-.xButton{
-    width: 10px;
-    height: 10px;
+.header img{
+    width: 14px;
+    height: 14px;
     image-rendering: pixelated;
-    transform: translate(0, -4px);
     cursor: url("customCursor-click.png"), pointer;
 }
 .xButton:hover{
     content: url("x-click.png");
-}
-
-.backButton{
-    width: 10px;
-    height: 10px;
-    image-rendering: pixelated;
-    transform: translate(0, -4px);
-    cursor: url("customCursor-click.png"), pointer;
 }
 .backButton:hover{
     content: url("back-click.png");
@@ -274,10 +292,7 @@ iframe{position: sticky}
 [contenteditable="true"]{
     min-width: calc(100% - 16px);
     min-height: 100%;
-}
-[contenteditable="true"]:focus{
-   border-width: 0px;
-   outline-width: 0px;
+    pointer-events: visible;
 }
 ::grammar-error{
     text-decoration: underline dashed #0f380f;
@@ -303,48 +318,17 @@ iframe{position: sticky}
 }
 .fill{
     width: 100%;
+    height: auto;
 }
 
-.mobileDisclaimer{
+#touchscreenWindow{
     visibility: hidden;
-    position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    max-height: 100%;
-    aspect-ratio: 1;
-    background-color: #518d23;
-    border: 4px solid #306230;
-    z-index: 1;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
-}
-.mobileDisclaimer img{
-    width: 35%;
-    height: auto;
-    margin: 5%;
+    top: 50%;
+    transform: translate(-50%, -50%)
 }
 @media (hover: none), (pointer: coarse) {
-  .onTop{
-        visibility: hidden;
-    }
-    .icons{
-        visibility: hidden;
-    }
-    #body{
-        width: 100%;
-        height: 100%;
-        aspect-ratio: auto;
-        left: 0;
-        top: 0;
-    }
-    .mobileDisclaimer{
-        visibility: visible;
-    }
-    p{
-        font-size: 5cqh;
-    }
+#touchscreenWindow{
+    visibility: visible;
+}
 }
