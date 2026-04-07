@@ -2,18 +2,33 @@
   font-family: DD;
   src: url('DigitalDisco.ttf');
 }
-
 @font-face{
   font-family: DD-thin;
   src: url('DigitalDisco-Thin.ttf');
 }
 
+/* Variables for consistency */
+:root{
+    --bodyWidth: calc(100cqh * 4 / 3);
+    --bodyHeight: 100cqh;
+    --bodyTop: 0%;
+    --bodyLeft: calc(50cqw - 100cqh * 2 / 3);
+
+    --borderWidth: calc((100cqw - var(--bodyWidth)) / 2)
+    --borderHeight: calc((100cqh - var(--bodyHeight)) / 2)
+}
+@media only screen and (min-height: 75cqw) {
+    :root{
+        --bodyWidth: 100cqw;
+        --bodyHeight: 75cqw;
+        --bodyLeft: 0;
+        --bodyTop: calc(50cqh - 37.5cqw);
+    }
+}
 
 body{
     background-color: black;
     overflow: hidden;
-    inline-size: 100cqw;
-    block-size: 100cqh;
 }
 
 #body{
@@ -22,39 +37,27 @@ body{
     background-size: 4.8px;
     image-rendering: pixelated;
     position: absolute;
-    top: 0%;
-    left: calc(50cqw - 100cqh * 2 / 3);
-    height: 100cqh;
-    width: calc(100cqh * 4 / 3);
     overflow: hidden;
     cursor: url("customCursor.png"), auto;
     z-index: 0;
+
+    top: var(--bodyTop);
+    left: var(--bodyLeft);
+    height: var(--bodyHeight);
+    width: var(--bodyWidth);
 }
 #bgOverlay{
     background-image: url("bg.png");
     background-size: 3.2px;
     image-rendering: pixelated;
     position: absolute;
-    top: 0%;
-    left: calc(50cqw - 100cqh * 2 / 3);
-    height: 100cqh;
-    width: calc(100cqh * 4 / 3);
     pointer-events: none;
     opacity: 0.15;
-}
-@media only screen and (min-height: 75cqw) {
-    #body{
-        width: 100cqw;
-        height: 75cqw;
-        left: 0;
-        top: calc(50cqh - 37.5cqw);
-    }
-    #bgOverlay{
-        width: 100cqw;
-        height: 75cqw;
-        left: 0;
-        top: calc(50cqh - 37.5cqw);
-    }
+
+    top: var(--bodyTop);
+    left: var(--bodyLeft);
+    height: var(--bodyHeight);
+    width: var(--bodyWidth);
 }
 ::selection{
     background:#6dbd16;
@@ -232,8 +235,8 @@ iframe{position: sticky}
 .windowContent{
     width: max-content;
     height: max-content;
-    max-width: 55vh;
-    max-height: 65vh;
+    max-width: calc(var(--bodyHeight) * 0.55);
+    max-height: calc(var(--bodyHeight) * 0.65);
     min-width: 196px;
     min-height: 128px;
     overflow: hidden auto;
@@ -315,6 +318,7 @@ iframe{position: sticky}
 }
 .fill{
     width: 100%;
+    height: auto;
 }
 
 #touchscreenWindow{

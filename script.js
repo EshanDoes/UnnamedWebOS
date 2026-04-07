@@ -428,7 +428,7 @@ const files = {
             content: `<p>Placeholder for when I actually use this folder</p>`
         },{
             name: "3rd",
-            name: "html",
+            type: "html",
             content: `<p>Sorry I didn't have anything yesterday, I was too busy watching number go up.<br>
             Aside from that though, I've been watching the people that have entered the collapse for now. Such a wide variety of faces, there's almost too many to handle! Well, I say almost not because of the amount of them, but because a lot of them are very easy to handle. Minor characters, in a way. Only there to fill out the empty gaps and bring a world life, nothing more. I do call them minor, but their role is anything but minor, it's just in the perspective of someone from beyond you wouldn't notice if one was missing.<br>
             Anyways, I'm getting off track. There are still people who we need to keep our eyes on, namely those I put in the character files but also a few more that I've been noticing. It would be a good idea to make sure they're on the right track.
@@ -599,6 +599,12 @@ function openWindow(openedWindow){
     }
     if(mainBody.getBoundingClientRect().width-(windowLeft+openingWindow.getBoundingClientRect().width) < 0){
         windowLeft = mainBody.getBoundingClientRect().width-openingWindow.getBoundingClientRect().width-6
+    }
+    if(windowLeft < 0){
+        windowLeft = 4
+    }
+    if(windowTop < 0){
+        windowTop = 4
     }
     openingWindow.style.top = windowTop + "px";
     openingWindow.style.left = windowLeft + "px";
