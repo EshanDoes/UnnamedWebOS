@@ -246,7 +246,7 @@ const files = {
                     - Has made a small portable forge to be able to forge small objects on the go<br>
                     - Has managed to make herself a pair of wings using metal
                     <br><br>
-                    She's already in the right direction, and if done right we could use the piece of her spirit for fulfilling other's fates.`
+                    She's already in the right direction, and she also seems to play a key part in someone else's fate. There doesn't seem to be any action that needs to be taken.`
             },{
                 name: "skyeToiletkoopaNotes",
                 type: "text",
@@ -297,7 +297,7 @@ const files = {
     },{
         name: "notes",
         type: "folder",
-        content: [{name: "2026march", type: "folder", content: [{
+        content: [{name: "2026March", type: "folder", content: [{
             name: "2026March4th",
             type: "html",
             content: `
@@ -422,10 +422,24 @@ const files = {
             <p>P.S. Hold on I think I'm cooking with these emoticons</p>
             <p>P.P.S. Nevermind they suck</p>`
         }
-        ]},{name: "2026april", type: "folder", content:[{
-            name: "2026April1st",
+        ]},{name: "2026April", type: "folder", content:[{
+            name: "1st",
             type: "html",
             content: `<p>Placeholder for when I actually use this folder</p>`
+        },{
+            name: "3rd",
+            name: "html",
+            content: `<p>Sorry I didn't have anything yesterday, I was too busy watching number go up.<br>
+            Aside from that though, I've been watching the people that have entered the collapse for now. Such a wide variety of faces, there's almost too many to handle! Well, I say almost not because of the amount of them, but because a lot of them are very easy to handle. Minor characters, in a way. Only there to fill out the empty gaps and bring a world life, nothing more. I do call them minor, but their role is anything but minor, it's just in the perspective of someone from beyond you wouldn't notice if one was missing.<br>
+            Anyways, I'm getting off track. There are still people who we need to keep our eyes on, namely those I put in the character files but also a few more that I've been noticing. It would be a good idea to make sure they're on the right track.
+            <br><br>
+            - █████</p>`
+        },{
+            name: "7th",
+            type: "html",
+            content: `<p>I've been thinking more about the fact I can intercept chat logs, like those DMs with Jen and Shifty. The process is a little hard to do manually, but when I do it I could get a lot of things that other people are saying. Maybe I should make an app to do it automatically... I mean, it would be a little difficult to figure out, but not impossible, right? All I really need is some time to figure it out...
+            <br><br>
+            - █████</p>`
         }
         ]}]
     },{
@@ -452,19 +466,23 @@ var mainBody
 var animatedElements
 var gameIframe
 document.addEventListener('DOMContentLoaded', function() {
-    var tickInterval = setInterval(tick, 100);
     var d = 0;
+    var tickLastUpdate = Date.now()
 
     function tick(){
-        document.getElementById("body").style.backgroundPositionY = d + "px";
-        if(d < 3){
-            d += 0.2;
-        } else{
-            d = 0;
+        document.getElementById("body").style.backgroundPositionY = d/500.0 + "px";
+        document.getElementById("bgOverlay").style.backgroundPositionY = d/-500.0 + "px";
+        var now = Date.now()
+        d += now - tickLastUpdate
+        if(d >= 4800.0){
+            d -= 4800.0
         }
+        tickLastUpdate = now
 
         var currentTime = new Date().toLocaleTimeString();
         document.getElementById("time").innerHTML = currentTime;
+
+        requestAnimationFrame(tick)
     }
 
     gameIframe = document.getElementById("gameFrame")
@@ -473,6 +491,8 @@ document.addEventListener('DOMContentLoaded', function() {
     closeFolder()
     animatedElements = document.getElementsByClassName("animated")
     console.log(animatedElements)
+
+    tick()
 });
 
 var notifsHidden = true;
