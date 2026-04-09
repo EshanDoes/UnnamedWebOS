@@ -2,9 +2,9 @@
 
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js"></script>
+    <link rel="icon" href="assets/images/siteicon.png">
     <title>██████ OS</title>
 
     <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -15,26 +15,26 @@
     <span class="onTop" id="bgOverlay"></span>
     <div id="body">
         <div class="icons">
-            <img src="filesIcon.png" onclick="openWindow('folderWindow')">
-            <img src="notesIcon.png" onclick="openWindow('notesWindow')">
-            <img src="gameIcon.png" onclick="openWindow('gameWindow')">
-            <img src="newsIcon.png" onclick="openWindow('newsWindow')">
+            <img src="assets/images/ui/icons/apps/files.png" onclick="openWindow('folderWindow')">
+            <img src="assets/images/ui/icons/apps/notes.png" onclick="openWindow('notesWindow')">
+            <img src="assets/images/ui/icons/apps/game.png" onclick="openWindow('gameWindow')">
+            <img src="assets/images/ui/icons/apps/news.png" onclick="openWindow('newsWindow')">
         </div>
 
         <div id="notesWindow" class="window" style="visibility: hidden;">
-            <div class="header" id="notesWindowheader"><img src="x.png" class="xButton" onclick="closeWindow('notesWindow')"></div><div class="windowContent" style="min-height: 0;">
+            <div class="header" id="notesWindowheader"><img src="assets/images/ui/main/x.png" class="xButton" onclick="closeWindow('notesWindow')"></div><div class="windowContent" style="min-height: 0;">
                 <p contenteditable="true" spellcheck="false"></p>
         </div></div>
         <div id="folderWindow" class="window" style="visibility: hidden;">
-            <div class="header" id="folderWindowheader"><img src="back.png" class="backButton" onclick="closeFolder()"><img src="x.png" class="xButton" onclick="closeWindow('folderWindow')"></div><div class="windowContent" id="folderContent">
+            <div class="header" id="folderWindowheader"><img src="assets/images/ui/main/back.png" class="backButton" onclick="closeFolder()"><img src="assets/images/ui/main/x.png" class="xButton" onclick="closeWindow('folderWindow')"></div><div class="windowContent" id="folderContent">
         </div></div>
         <div id="gameWindow" class="window" style="visibility: hidden; padding: 16px 0px 0px 0px; height: 400px;">
-            <div class="header" id="gameWindowheader"><img src="x.png" class="xButton" onclick="closeWindow('gameWindow')"></div>
+            <div class="header" id="gameWindowheader"><img src="assets/images/ui/main/x.png" class="xButton" onclick="closeWindow('gameWindow')"></div>
             <iframe frameborder="0" src="https://itch.io/embed-upload/16855415?color=0f380f" allowfullscreen="" width="400" height="420" id="gameFrame"><a href="https://eshan-does.itch.io/unnamed-clicker">Play ██████ Clicker on itch.io</a></iframe>
         </div>
         <div id="newsWindow" class="window" style="visibility: hidden;">
-            <div class="header" id="newsWindowheader"><img src="x.png" class="xButton" onclick="closeWindow('newsWindow')"></div><div class="windowContent">
-                <img src="fileAssets/news/article1/header.png" class="fill">
+            <div class="header" id="newsWindowheader"><img src="assets/images/ui/main/x.png" class="xButton" onclick="closeWindow('newsWindow')"></div><div class="windowContent">
+                <img src="assets/images/news/article1/header.png" class="fill">
                 <h1>WEIRD PEN APPEARED</h1>
                 <p>A really weird pen appeared in the outskirts of Nashville, Ohio and was discovered by a local resident. It was shown to everyone else in the town, and was feared by many, while others laughed or were just confused. We've asked a local about what they thought, and here's what they said:
                 <br><br><q>It's really weird. I think- I think they should bring it to Area 51, I dunno.</q><br><br>
@@ -47,18 +47,18 @@
         </div></div>
 
         <div id="touchscreenWindow" class="window">
-            <div class="header" id="touchscreenWindowheader"><img src="x.png" class="xButton" onclick="closeWindow('touchscreenWindow')"></div><div class="windowContent">
+            <div class="header" id="touchscreenWindowheader"><img src="assets/images/ui/main/x.png" class="xButton" onclick="closeWindow('touchscreenWindow')"></div><div class="windowContent">
                 <h1>NOTICE</h1>
                 <p>This site doesn't work well on touchscreen devices! You can try to use it, just know that it'll be very broken with features like dragging windows and I am still working on proper touchscreen compatability. Feel free to close this window if you think you'll still be able to use it.</p>
         </div></div>
 
         <div id="options" class="onTop animated" style="bottom: calc(-40% - 32px); visibility: hidden;">
             <p>Options</p><br>
-            <p onclick="toggleOption('animations')"><img src="box-checked.png" class="checkbox" id="animationsCheckbox"> Enable animations</p>
+            <p onclick="toggleOption('animations')"><img class="checkbox" id="animationsCheckbox"> Enable animations</p>
         </div>
         <div class="bottombar onTop" class="onTop"><p style="margin-right: 16px; vertical-align: center;" id="time" class="">10:20 AM</p><span style="width: 4px; height: 100%; background-color: #306230;"></span>
-            <a href="https://discord.gg/ENChZjqFBx"><img src="chaticon.png"></a>
-            <img src="notif.png" id="notifButton" onclick="toggleNotifs()">
+            <a href="https://discord.gg/ENChZjqFBx"><img src="assets/images/ui/icons/bottombar/chat.png"></a>
+            <img src="assets/images/ui/icons/bottombar/notif.png" id="notifButton" onclick="toggleNotifs()">
         </div>
         <div class="notifs onTop animated" id="notifs" style="visibility: hidden;">
             <div><p>No notifications...</p></div>

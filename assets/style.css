@@ -1,10 +1,10 @@
 @font-face {
   font-family: DD;
-  src: url('DigitalDisco.ttf');
+  src: url('fonts/DigitalDisco.ttf');
 }
 @font-face{
   font-family: DD-thin;
-  src: url('DigitalDisco-Thin.ttf');
+  src: url('fonts/DigitalDisco-Thin.ttf');
 }
 
 /* Variables for consistency */
@@ -13,6 +13,10 @@
     --bodyHeight: 100cqh;
     --bodyTop: 0%;
     --bodyLeft: calc(50cqw - 100cqh * 2 / 3);
+    --bgImage: url("images/ui/main/bg.png");
+
+    --cursor: url("images/ui/main/customCursor.png"), auto;
+    --hoverCursor: url("images/ui/main/customCursor-click.png"), pointer;
 
     --borderWidth: calc((100cqw - var(--bodyWidth)) / 2)
     --borderHeight: calc((100cqh - var(--bodyHeight)) / 2)
@@ -33,12 +37,12 @@ body{
 
 #body{
     background-color: #0f380f;
-    background-image: url("bg.png");
+    background-image: var(--bgImage);
     background-size: 4.8px;
     image-rendering: pixelated;
     position: absolute;
     overflow: hidden;
-    cursor: url("customCursor.png"), auto;
+    cursor: var(--cursor);
     z-index: 0;
 
     top: var(--bodyTop);
@@ -47,7 +51,7 @@ body{
     width: var(--bodyWidth);
 }
 #bgOverlay{
-    background-image: url("bg.png");
+    background-image: var(--bgImage);
     background-size: 3.2px;
     image-rendering: pixelated;
     position: absolute;
@@ -114,15 +118,8 @@ p img{
 p img::selection{
     background-color: #6dbd16;
 }
-a {cursor: url("customCursor-click.png"), pointer}
+a {cursor: var(--hoverCursor)}
 iframe{position: sticky}
-
-.checkbox{
-    width: 16px;
-    height: 16px;
-    content: url("box-unchecked.png");
-    transform: translate(0, -2px);
-}
 
 .bottombar{
     width: calc(100% - 172px);
@@ -144,20 +141,20 @@ iframe{position: sticky}
     height: 32px;
     margin: 0px 4px;
 }
-.bottombar a:hover img[src="chaticon.png"]{
-    content: url("chaticon-hover.png");
+.bottombar a:hover img[src="assets/images/ui/icons/bottombar/chat.png"]{
+    content: url("images/ui/icons/bottombar/hover/chat.png");
 }
 
 #notifButton{
     position: absolute;
     right: 0px;
-    cursor: url("customCursor-click.png"), pointer;
+    cursor: var(--hoverCursor);
 }
 #notifButton:hover{
-    content: url("notif-click.png");
+    content: url("images/ui/icons/bottombar/hover/notif.png");
 }
-[src="notifNew.png"]#notifButton:hover{
-    content: url("notifNew-click.png")
+[src="assets/images/ui/icons/bottombar/notifNew.png"]#notifButton:hover{
+    content: url("images/ui/icons/bottombar/hover/notifNew.png")
 }
 
 #time{
@@ -210,7 +207,7 @@ iframe{position: sticky}
     height: 64px;
     position: relative;
     margin: 16px;
-    cursor: url("customCursor-click.png"), pointer;
+    cursor: var(--hoverCursor);
 }
 .icons img:hover{
     filter:
@@ -267,13 +264,13 @@ iframe{position: sticky}
     width: 14px;
     height: 14px;
     image-rendering: pixelated;
-    cursor: url("customCursor-click.png"), pointer;
+    cursor: var(--hoverCursor);
 }
 .xButton:hover{
-    content: url("x-click.png");
+    content: url("images/ui/main/hover/x.png");
 }
 .backButton:hover{
-    content: url("back-click.png");
+    content: url("images/ui/main/hover/back.png");
 }
 
 ::-webkit-scrollbar{
@@ -283,7 +280,7 @@ iframe{position: sticky}
 ::-webkit-scrollbar-thumb{
     background-color: #518d23;
     border: 3px solid #306230;
-    cursor: url("customCursor-click.png"), pointer;
+    cursor: var(--hoverCursor);
 }
 ::-webkit-scrollbar-thumb:hover{
     background-color: #6dbd16;
@@ -308,7 +305,7 @@ iframe{position: sticky}
     transition: 0s ease-in-out;
 }
 .hoverable{
-    cursor: url("customCursor-click.png"), pointer;
+    cursor: var(--hoverCursor);
 }
 .hoverable:hover{
     color: #6dbd16;

@@ -10,3 +10,4 @@ waf3-*-*/
 
 .vscode
 .vercel
+.env*.local
