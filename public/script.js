@@ -1,4 +1,3 @@
-// Wait for the DOM to be ready before accessing any elements.
 const files = {
     type: "folder",
     content: [{
@@ -7,7 +6,7 @@ const files = {
         content: [{
             name: "Warren's",
             type: "image",
-            content: "assets/images/files/warrens.png"
+            content: "/images/files/warrens.png"
         },{
             name: "menu",
             type: "folder",
@@ -70,7 +69,7 @@ const files = {
             },{
                 name: "ocsnCard",
                 type: "image",
-                content: "assets/images/files/ocsnCards/shifty.png"
+                content: "/images/files/ocsnCards/shifty.png"
             }]
         },{
             name: "mysteryMan",
@@ -113,7 +112,7 @@ const files = {
             },{
                 name: "ocsnCard",
                 type: "image",
-                content: "assets/images/files/ocsnCards/mysteryMan.png"
+                content: "/images/files/ocsnCards/mysteryMan.png"
             }]
         },{
             name: "jen",
@@ -129,7 +128,7 @@ const files = {
             },{
                 name: "ocsnCard",
                 type: "image",
-                content: "assets/images/files/ocsnCards/jen.png"
+                content: "/images/files/ocsnCards/jen.png"
             },{
                 name: "jen&shiftyChatLogs",
                 type: "text",
@@ -350,14 +349,14 @@ const files = {
             name: "2026March13th",
             type: "html",
             content: `<p>Wow, how this website has evolved, huh? I'm highly confident you didn't know this, but before the site looked something like this:</p>
-                <img src="assets/images/files/ogSite.png">
+                <img src="/images/files/ogSite.png">
                 <p>I know the image looks JPEG'd, and that's because it is. (Look, the only screenshot I had of the before was a JPEG, okay?) Either way, the site looks a lot different now than it was before. Now there's a file system, the notepad app, a new background which actually doesn't look much different on the image but it was definitely different, animations for the windows, and more. I'm proud of what I did to make this site just a little bit better every day. It's nice to work on stuff like this.
                 <br><br>
                 - █████</p>`
         },{
             name: "2026March14th",
             type: "html",
-            content: `<p>Well, I think I'm done with the character files for now. Had to scale things down a bit (especially with how many Graces there are) but it should be done. I'm glad, especially considering that means this website is almost ready to show! I even added emojis to commemorate this! <img src="assets/images/emojis/cool.png"><br>
+            content: `<p>Well, I think I'm done with the character files for now. Had to scale things down a bit (especially with how many Graces there are) but it should be done. I'm glad, especially considering that means this website is almost ready to show! I even added emojis to commemorate this! <img src="/images/emojis/cool.png"><br>
                 ... I'm only now just realizing these emojis are really small.<br>
                 Either way, I'll mostly just polish things up here and there. Add things, fix bugs, etcetera. Once that's done, it's good to go!
                 <br><br>
@@ -394,7 +393,7 @@ const files = {
         },{
             name: "2026March27th",
             type: "html",
-            content: `<p>I know I already said I'm sick and tired of something before, but I am sick and tired of having these notes just be thrown into one folder. As such, I decided to organize them by month. To anyone reading this, you're welcome!<img src='assets/images/emojis/smile.png'>
+            content: `<p>I know I already said I'm sick and tired of something before, but I am sick and tired of having these notes just be thrown into one folder. As such, I decided to organize them by month. To anyone reading this, you're welcome!<img src='/images/emojis/smile.png'>
                 <br><br>
                 - █████</p>`
         },{
@@ -466,7 +465,7 @@ const files = {
             }]
         }]
     }]
-}
+};
 var options = {animations: true}
 
 var mainBody
@@ -508,7 +507,7 @@ function toggleNotifs(){
     if(notifsHidden){
         document.getElementById("notifs").style.right = "0px";
         document.getElementById("notifs").style.visibility = "visible";
-        document.getElementById("notifButton").src = "assets/images/ui/icons/bottombar/notif.png"
+        document.getElementById("notifButton").src = "/images/ui/icons/bottombar/notif.png"
         notifsHidden = false;
         if(notifsOnStandby != []){
             for(let i = 0; i < notifsOnStandby.length; i++){
@@ -528,7 +527,7 @@ function addNotif(newNotif){
     } else{
         notifsOnStandby.push(newNotif)
     }
-    document.getElementById("notifButton").src = "assets/images/ui/icons/bottombar/notifNew.png"
+    document.getElementById("notifButton").src = "/images/ui/icons/bottombar/notifNew.png"
 }
 
 var selectedWindow = undefined
@@ -595,29 +594,30 @@ function dragElement(element) {
 // Basic window functionality
 function closeWindow(closedWindow){
     document.getElementById(closedWindow).style.visibility = "hidden";
-}
+} 
 function openWindow(openedWindow){
-    var openingWindow = document.getElementById(openedWindow)
+    var openingWindow = document.getElementById(openedWindow);
     openingWindow.style.visibility = "visible";
-    var windowTop = window.event.clientY-(window.innerHeight-mainBody.getBoundingClientRect().height)/2
-    var windowLeft = window.event.clientX-(window.innerWidth-mainBody.getBoundingClientRect().width)/2
+    var windowTop = window.event.clientY-(window.innerHeight-mainBody.getBoundingClientRect().height)/2;
+    var windowLeft = window.event.clientX-(window.innerWidth-mainBody.getBoundingClientRect().width)/2;
     if(mainBody.getBoundingClientRect().height-(windowTop+openingWindow.getBoundingClientRect().height) < 36){
-        windowTop = mainBody.getBoundingClientRect().height-openingWindow.getBoundingClientRect().height-46
+        windowTop = mainBody.getBoundingClientRect().height-openingWindow.getBoundingClientRect().height-46;
     }
     if(mainBody.getBoundingClientRect().width-(windowLeft+openingWindow.getBoundingClientRect().width) < 0){
-        windowLeft = mainBody.getBoundingClientRect().width-openingWindow.getBoundingClientRect().width-6
+        windowLeft = mainBody.getBoundingClientRect().width-openingWindow.getBoundingClientRect().width-6;
     }
     if(windowLeft < 0){
-        windowLeft = 4
+        windowLeft = 4;
     }
     if(windowTop < 0){
-        windowTop = 4
+        windowTop = 4;
     }
     openingWindow.style.top = windowTop + "px";
     openingWindow.style.left = windowLeft + "px";
-    selectWindow(openingWindow)
-    startWindowAnim(openingWindow)
-}
+    console.log(openedWindow);
+    //selectWindow(openingWindow);
+    //startWindowAnim(openingWindow);
+} 
 function loadWindows(){
     // Make the window elements draggable one by one.
     for(let i = 0; i < document.getElementsByClassName("window").length; i++){
@@ -719,7 +719,7 @@ function openFolder(openFolder = currentFolder){
     folderWindow.innerHTML = ""
     var folderContent = openFile(openFolder).content
     for(let i = 0; i < folderContent.length; i++){
-        folderWindow.innerHTML += "<p onclick='openRelativeFile(" + i + ")' class='hoverable'><img class='fileIcons' src='assets/images/ui/icons/files/" + folderContent[i].type + ".png'>" + folderContent[i].name + "</p>"
+        folderWindow.innerHTML += "<p onclick='openRelativeFile(" + i + ")' class='hoverable'><img class='fileIcons' src='/images/ui/icons/files/" + folderContent[i].type + ".png'>" + folderContent[i].name + "</p>"
     }
     if(folderContent.length == 0){
         folderWindow.innerHTML = "<p>This folder is empty...</p>"
@@ -731,7 +731,7 @@ function openImage(currentFile, dir = []){
     var windowName = "w" + dir.join("-")
     if(document.getElementById(windowName + "Window") == null){
         mainBody.innerHTML += `<div id="`+windowName+`Window" class="window" style="visibility: hidden;">
-            <div class="header" id="`+windowName+`Windowheader"><img src="assets/images/ui/main/x.png" class="xButton" onclick="closeWindow('`+windowName+`Window')"></div>
+            <div class="header" id="`+windowName+`Windowheader"><img src="/images/ui/main/x.png" class="xButton" onclick="closeWindow('`+windowName+`Window')"></div>
                 <img src="`+currentFile.content+`">
         </div>`
         deselectWindow(document.getElementById("folderWindow"))
@@ -743,13 +743,13 @@ function openText(currentFile, dir = []){
     var windowName = "w" + dir.join("-")
     if(document.getElementById(windowName + "Window") == null){
         mainBody.innerHTML += `<div id="`+windowName+`Window" class="window" style="visibility: hidden;">
-            <div class="header" id="`+windowName+`Windowheader"><img src="assets/images/ui/main/x.png" class="xButton" onclick="closeWindow('`+windowName+`Window')"></div>
+            <div class="header" id="`+windowName+`Windowheader"><img src="/images/ui/main/x.png" class="xButton" onclick="closeWindow('`+windowName+`Window')"></div>
             <div class="windowContent"><p contenteditable="true" spellcheck="false">`+currentFile.content+`</p></div>
         </div>`
         deselectWindow(document.getElementById("folderWindow"))
     } else{
         document.getElementById(windowName + "Window").innerHTML = `
-            <div class="header" id="`+windowName+`Windowheader"><img src="assets/images/ui/main/x.png" class="xButton" onclick="closeWindow('`+windowName+`Window')"></div>
+            <div class="header" id="`+windowName+`Windowheader"><img src="/images/ui/main/x.png" class="xButton" onclick="closeWindow('`+windowName+`Window')"></div>
             <div class="windowContent"><p contenteditable="true" spellcheck="false">`+currentFile.content+`</p></div>`
     }
     loadWindows()
@@ -759,7 +759,7 @@ function openContent(currentFile, dir = []){
     var windowName = "w" + dir.join("-")
     if(document.getElementById(windowName + "Window") == null){
         mainBody.innerHTML += `<div id="`+windowName+`Window" class="window" style="visibility: hidden;">
-            <div class="header" id="`+windowName+`Windowheader"><img src="assets/images/ui/main/x.png" class="xButton" onclick="closeWindow('`+windowName+`Window')"></div>
+            <div class="header" id="`+windowName+`Windowheader"><img src="/images/ui/main/x.png" class="xButton" onclick="closeWindow('`+windowName+`Window')"></div>
                 <div class="windowContent">`+currentFile.content+`</div>
             </div>`
         deselectWindow(document.getElementById("folderWindow"))
