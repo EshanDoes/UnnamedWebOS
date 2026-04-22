@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-export default function Time(){
+export function Time(){
     const [time, setTime] = useState("");
 
     useEffect(() => {

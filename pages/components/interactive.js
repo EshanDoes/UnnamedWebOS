@@ -175,7 +175,7 @@ export function SimpleWindow({ windowName, children, windowStyle = {}, headerSty
     </div>
   )
 }
-export default function Window({ windowName, children, windowStyle = {}, headerStyle = {}, contentStyle = {} }){
+export function Window({ windowName, children, windowStyle = {}, headerStyle = {}, contentStyle = {} }){
     return (
     <SimpleWindow windowName={windowName} windowStyle={windowStyle} headerStyle={headerStyle}>
         <div className="windowContent" style={contentStyle}>
