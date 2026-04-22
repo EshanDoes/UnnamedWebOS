@@ -2,11 +2,11 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 import { useRef } from 'react';
 
-import { Window } from './components/interactive.js'
-import { SimpleWindow } from './components/interactive.js'
-import { WindowDiv } from './components/interactive.js'
-import { WindowIcon } from './components/interactive.js'
-import { Time } from './components/live.js'
+import { Window } from '../components/interactive.js'
+import { SimpleWindow } from '../components/interactive.js'
+import { WindowDiv } from '../components/interactive.js'
+import { WindowIcon } from '../components/interactive.js'
+import { Time } from '../components/live.js'
 
 export default function Main(){
 var output = < >
