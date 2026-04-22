@@ -471,7 +471,7 @@ var options = {animations: true}
 var mainBody
 var animatedElements
 var gameIframe
-document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
     var d = 0;
     var tickLastUpdate = Date.now()
 
@@ -493,13 +493,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     gameIframe = document.getElementById("gameFrame")
     loadWindows()
-    mainBody = document.getElementById("body")
+    mainBody = document.getElementById("body")*/
     closeFolder()
-    animatedElements = document.getElementsByClassName("animated")
+    /*animatedElements = document.getElementsByClassName("animated")
     console.log(animatedElements)
 
     tick()
-});
+});*/
 
 var notifsHidden = true;
 var notifsOnStandby = []
@@ -529,7 +529,7 @@ function addNotif(newNotif){
     }
     document.getElementById("notifButton").src = "/images/ui/icons/bottombar/notifNew.png"
 }
-
+/*
 var selectedWindow = undefined
 // Step 1: Define a function called `dragElement` that makes an HTML element draggable.
 function dragElement(element) {
@@ -615,8 +615,8 @@ function openWindow(openedWindow){
     openingWindow.style.top = windowTop + "px";
     openingWindow.style.left = windowLeft + "px";
     console.log(openedWindow);
-    //selectWindow(openingWindow);
-    //startWindowAnim(openingWindow);
+    selectWindow(openingWindow);
+    startWindowAnim(openingWindow);
 } 
 function loadWindows(){
     // Make the window elements draggable one by one.
@@ -670,7 +670,7 @@ function windowAnim(){
         lastUpdate = null
         animatedWindow.style.transform = "translate(0px, 0px)"
     }
-}
+} */
 
 // Basic file navigation
 var currentFolder = []
