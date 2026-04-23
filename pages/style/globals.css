@@ -34,6 +34,8 @@
 body{
     background-color: black;
     overflow: hidden;
+    place-items: center;
+    place-content: center;
 }
 
 #body{
@@ -75,7 +77,7 @@ body{
     100% {background-position-y: 9.6px;}
 }
 
-::selection{
+#body ::selection{
     background:#6dbd16;
 }
 :focus{
@@ -85,20 +87,26 @@ body{
 }
 
 p{
-    color: #306230;
+    color: white;
     font-family: DD-thin;
     font-size: 32px;
     margin: 4px;
     text-rendering: pixelated;
     image-rendering: pixelated;
 }
+#body p{
+    color: #306230;
+}
 h1{
-    color: #0f380f;
+    color: white;
     font-size: 48px;
     font-family: DD;
     text-align: center;
     margin: 6px;
     text-rendering: pixelated;
+}
+#body h1{
+    color: #0f380f;
 }
 small{
     font-size: 16px;

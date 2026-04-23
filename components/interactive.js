@@ -145,7 +145,7 @@ export function handleWindowInteraction(windowRef, headerRef, xButtonRef) {
     }
 
     handle.addEventListener('mousedown', onMouseDown)
-    xButton.addEventListener('mousedown', xButtonClick)
+    xButton.addEventListener('mouseup', xButtonClick)
     element.addEventListener('mousedown', function (e) {selectWindow(this);})
 
     return () => {
@@ -203,68 +203,8 @@ export function WindowIcon({ window, name = window }){
     return (<img src={"/images/ui/icons/apps/"+name+".png"} onClick={(e) => openWindow(linkedWindow, e)} />)
 }
 
-export function WindowDiv(){
+export function WindowDiv({ children }){
   return (<div id="windows">
-    <Window windowName="notesWindow" contentStyle={{ minHeight: 0 }}><p contentEditable="true" spellCheck="false" /></Window>
-    <FileWindow />
-    <Window windowName="gameWindow" windowStyle={{ padding: "16px 0px 0px 0px", height: 400 }}>
-      <iframe
-        frameBorder={0}
-        src="https://itch.io/embed-upload/16855415?color=0f380f"
-        allowFullScreen=""
-        width={400}
-        height={420}
-        id="gameFrame"
-      />
-    </Window>
-    <Window windowName="newsWindow">
-      <img src="/images/news/article1/header.png" className="fill" />
-        <h1>WEIRD PEN APPEARED</h1>
-        <p>
-          A really weird pen appeared in the outskirts of Nashville, Ohio and
-          was discovered by a local resident. It was shown to everyone else in
-          the town, and was feared by many, while others laughed or were just
-          confused. We've asked a local about what they thought, and here's what
-          they said:
-          <br />
-          <br />
-          <q>
-            It's really weird. I think- I think they should bring it to Area 51,
-            I dunno.
-          </q>
-          <br />
-          <br />
-          When the pen is used on some parts of the paper, it seems to work just
-          fine, while on others it's like it isn't even a pen at all. Currently
-          scientists are studying this pen and its properties in order to find
-          out where the pen came from, what the pen truly is, and why it acts
-          like this.
-        </p>
-        <p>
-          More info will be documented and revealed on here when it comes out.
-          In the meantime, it's best to stay away from any silver pens with a
-          blue tip until the matter has been resolved.
-        </p>
-        <p>
-          This is Mystery Man, and you've just finished reading the current
-          article of Mystery Man's Hobbyist News.
-        </p>
-        <br />
-        <br />
-        <p style={{ textAlign: "center" }}>
-          <small>Article 1 - April 1st, 2026 - Updated every Friday</small>
-        </p>
-        {/*<p style="text-align: center;"><small>All articles taken from Mystery Man's Hobbyist News</small></p>*/}
-    </Window>
-    <Window windowName="touchscreenWindow">
-      <h1>NOTICE</h1>
-      <p>
-          This site doesn't work well on touchscreen devices! You can try to use
-          it, just know that it'll be very broken with features like dragging
-          windows and I am still working on proper touchscreen compatability.
-          Feel free to close this window if you think you'll still be able to
-          use it.
-      </p>
-    </Window>
+    {children}
   </div>);
 }
