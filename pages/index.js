@@ -38,7 +38,7 @@ export default function Main(){
       />
     </Window>
     <Window windowName="newsWindow">
-      <img src="/images/news/article1/header.png" className="fill" />
+      <img src="/images/news/article1/header.png" className="fill" alt="A header image featuring a pen." />
         <h1>WEIRD PEN APPEARED</h1>
         <p>
           A really weird pen appeared in the outskirts of Nashville, Ohio and
@@ -101,8 +101,8 @@ export default function Main(){
     <div className="bottombar onTop">
       <Time />
       <span style={{ width: 4, height: "100%", backgroundColor: "#306230" }} />
-      <a href="https://discord.gg/ENChZjqFBx">
-        <img src="/images/ui/icons/bottombar/chat.png" />
+      <a href="https://discord.gg/ENChZjqFBx" aria-label="Join the Technical Difficulties Discord server">
+        <img src="/images/ui/icons/bottombar/chat.png" alt="A chat icon under the link to a Discord server." />
       </a>
       <img
         src="/images/ui/icons/bottombar/notif.png"

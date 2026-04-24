@@ -145,7 +145,7 @@ export function handleWindowInteraction(windowRef, headerRef, xButtonRef) {
     }
 
     handle.addEventListener('mousedown', onMouseDown)
-    xButton.addEventListener('mouseup', xButtonClick)
+    xButton.addEventListener('click', xButtonClick)
     element.addEventListener('mousedown', function (e) {selectWindow(this);})
 
     return () => {
@@ -156,7 +156,7 @@ export function handleWindowInteraction(windowRef, headerRef, xButtonRef) {
   }, [windowRef, headerRef, xButtonRef])
 }
 
-// Most code before this comment is written by AI at first, but read through and modified with human hands
+// Most code before this comment is written by AI at first, but read through and modified with human hands. I've made sure to go through and fix any bugs on my own.
 
 export function SimpleWindow({ windowName, children, windowStyle = {}, headerStyle = {}, headerChildren = <></> }) {
   const windowRef = useRef(null)
@@ -169,7 +169,7 @@ export function SimpleWindow({ windowName, children, windowStyle = {}, headerSty
     <div ref={windowRef} id={windowName} className="window" style={windowStyle}>
       <div ref={headerRef} className="header" id={`${windowName}header`} style={headerStyle}>
         {headerChildren}
-        <img ref={xButtonRef} src="/images/ui/main/x.png" className="xButton" />
+        <button ref={xButtonRef}><img src="/images/ui/main/x.png" className="xButton" alt="An X button on a window meant to close the window." /></button>
       </div>
       {children}
     </div>
@@ -186,7 +186,7 @@ export function Window({ windowName, children, windowStyle = {}, headerStyle = {
 export function FileWindow(){
     return (
     <SimpleWindow windowName="folderWindow" headerChildren={
-        <img src="/images/ui/main/back.png" className="backButton" />
+        <img src="/images/ui/main/back.png" className="backButton" alt="A back button meant for going to the previous folder." />
     }>
         <div className="windowContent" id="folderContent" />
     </SimpleWindow>
@@ -200,7 +200,7 @@ export function WindowIcon({ window, name = window }){
     } else {
         linkedWindow = window
     }
-    return (<img src={"/images/ui/icons/apps/"+name+".png"} onClick={(e) => openWindow(linkedWindow, e)} />)
+    return (<button  onClick={(e) => openWindow(linkedWindow, e)}><img src={"/images/ui/icons/apps/"+name+".png"} alt={"An icon that can be clicked to open a "+name+" window."} /></button>)
 }
 
 export function WindowDiv({ children }){
