@@ -225,11 +225,11 @@ export function WindowDiv({ children }){
   const addWindow = useCallback((dir, file, event) => {
     setAddedWindows(prev => {
       const key = `w${dir.join('-')}`
+      setTimeout(() => openWindow(key, event), 0)
       // Avoid duplicates
       if (prev.find(w => w.key === key)) {
         return prev
       }
-      setTimeout(() => openWindow(key, event), 0)
       return [...prev, { key, dir, file }]
     })
   }, [])
