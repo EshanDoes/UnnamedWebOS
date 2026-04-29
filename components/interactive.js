@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 
 // Module-level variables for window management
 let selectedWindow = undefined
@@ -29,7 +29,6 @@ export function deselectWindow(element) {
 
 // Window animation
 export function startWindowAnim(element) {
-  // Assuming options.animations is true or handled elsewhere
   animatedWindow = element
   delta = 0
   requestAnimationFrame(windowAnim)
@@ -158,6 +157,11 @@ export function handleWindowInteraction(windowRef, headerRef, xButtonRef) {
 
 // Most code before this comment is written by AI at first, but read through and modified with human hands. I've made sure to go through and fix any bugs on my own.
 
+import { StrictMode } from 'react';
+import files from '../pages/files.json'
+
+var currentDir = []
+
 export function SimpleWindow({ windowName, children, windowStyle = {}, headerStyle = {}, headerChildren = <></> }) {
   const windowRef = useRef(null)
   const headerRef = useRef(null)
@@ -183,12 +187,12 @@ export function Window({ windowName, children, windowStyle = {}, headerStyle = {
         </div>
     </SimpleWindow>)
 }
-export function FileWindow(){
+export function FileWindow({ windowRef, contentRef, backRef }){
     return (
-    <SimpleWindow windowName="folderWindow" headerChildren={
-        <img src="/images/ui/main/back.png" className="backButton" alt="A back button meant for going to the previous folder." />
+    <SimpleWindow ref={windowRef} windowName="folderWindow" headerChildren={
+        <button ref={backRef}><img src="/images/ui/main/back.png" className="backButton" alt="A back button meant for going to the previous folder." /></button>
     }>
-        <div className="windowContent" id="folderContent" />
+        <div ref={contentRef} className="windowContent"><p>Test</p></div>
     </SimpleWindow>
     )
 }
@@ -200,11 +204,135 @@ export function WindowIcon({ window, name = window }){
     } else {
         linkedWindow = window
     }
-    return (<button  onClick={(e) => openWindow(linkedWindow, e)}><img src={"/images/ui/icons/apps/"+name+".png"} alt={"An icon that can be clicked to open a "+name+" window."} /></button>)
+    return (<button onClick={(e) => openWindow(linkedWindow, e)}><img src={"/images/ui/icons/apps/"+name+".png"} alt={"An icon that can be clicked to open a "+name+" window."} /></button>)
+}
+
+function openFile(directory = []){
+  let fileSearch = files
+  for(let i = 0; i < directory.length; i++){
+    fileSearch = fileSearch.content[directory[i]]
+  }
+  return fileSearch
 }
 
 export function WindowDiv({ children }){
-  return (<div id="windows">
+  const fileWindow = useRef(null)
+  const fileDiv = useRef(null)
+  const windowDiv = useRef(null)
+  const backButton = useRef(null)
+  const [addedWindows, setAddedWindows] = useState([])
+  
+  const addWindow = useCallback((dir, file, event) => {
+    setAddedWindows(prev => {
+      const key = `w${dir.join('-')}`
+      // Avoid duplicates
+      if (prev.find(w => w.key === key)) {
+        return prev
+      }
+      setTimeout(() => openWindow(key, event), 0)
+      return [...prev, { key, dir, file }]
+    })
+  }, [])
+  
+  fileSystem(fileWindow, fileDiv, windowDiv, backButton, addWindow)
+  
+  // Start of a small bit of AI code
+  const renderWindow = (item) => {
+    const { key, dir, file } = item
+    switch (file.type) {
+      case 'image':
+        return <ImageFileWindow key={key} dir={dir} />
+      case 'text':
+        return <TextFileWindow key={key} dir={dir} />
+      default:
+        return <ContentFileWindow key={key} dir={dir} />
+    }
+  }
+  // End of a small bit of AI code
+  
+  return (<div ref={windowDiv} id="windows">
     {children}
+    <FileWindow windowRef={fileWindow} contentRef={fileDiv} backRef={backButton} />
+    {addedWindows.map(renderWindow)}
   </div>);
+}
+
+export function fileSystem(fileWindow, fileDiv, windowDiv, backButton, addWindow){
+  useEffect(() => {
+    const element = fileWindow.current
+    const content = fileDiv.current
+    const windows = windowDiv.current
+    const back = backButton.current
+
+    function openRelativeFile(directory, e = null){
+      if(Array.isArray(directory) == false){directory = [directory];}
+      let file = openFile(currentDir.concat(directory))
+      if(file.type == "folder"){
+        if(currentDir[0] != 4 && currentDir[1] != 0){
+          currentDir.push(directory)
+        }
+        openFolder()
+      } else {
+        // It's a file, not a folder - add it to the windows array
+        addWindow(currentDir.concat(directory), file, e)
+      }
+    }
+    function openFolder(directory = currentDir){
+      if(currentDir != directory){currentDir = directory}
+      var currentFiles = openFile(directory).content
+      content.innerHTML = ""
+      for(let i = 0; i < currentFiles.length; i++){
+        const fileItem = document.createElement('p')
+        fileItem.className = 'hoverable'
+        fileItem.innerHTML = '<img class="fileIcons" src="/images/ui/icons/files/' + currentFiles[i].type + '.png">' + currentFiles[i].name
+        fileItem.addEventListener('click', (e) => {
+          openRelativeFile(i, e)
+        })
+        content.appendChild(fileItem)
+      }
+      startWindowAnim(document.getElementById("folderWindow"))
+      selectWindow(document.getElementById("folderWindow"))
+    }
+    function closeFolder(){
+      currentDir.pop()
+      openFolder()
+    }
+
+    back.addEventListener("click", closeFolder)
+    openFolder([])
+  }, [fileWindow, fileDiv, windowDiv, backButton, addWindow])
+}
+
+export function ImageFileWindow({ dir, content = null }){
+  if(content == null){
+    content = openFile(dir).content
+  }
+  var windowName = "w" + dir.join("-")
+  return <SimpleWindow key={windowName} windowName={windowName}><img src={content} /></SimpleWindow>
+}
+export function TextFileWindow({ dir, content = null }){
+  if(content == null){
+    content = openFile(dir).content
+  }
+  var windowName = "w" + dir.join("-")
+  return <Window key={windowName} windowName={windowName} contentStyle={{ minHeight: 0 }}><p contentEditable="true" spellCheck="false">{content}</p></Window>
+}
+export function ContentFileWindow({ dir, content = null }){
+  if(content == null){
+    content = openFile(dir).content
+  }
+  var windowName = "w" + dir.join("-")
+  const contentRef = useRef(null)
+  
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.innerHTML = content
+    }
+  }, [content])
+  
+  return (
+    <Window key={windowName} windowName={windowName}>
+      <div ref={contentRef} className="windowContent"></div>
+    </Window>
+  )
 }

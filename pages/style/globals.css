@@ -146,6 +146,8 @@ button {
     border: none;
     width: min-content;
     height: min-content;
+    display: inline-flex;
+    align-items: baseline;
 }
 button:focus {
     outline: none;

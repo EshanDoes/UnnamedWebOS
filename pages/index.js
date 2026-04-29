@@ -1,11 +1,7 @@
 import Head from 'next/head';
 import { useRef, useEffect } from 'react';
 
-import { Window } from '../components/interactive.js'
-import { SimpleWindow } from '../components/interactive.js'
-import { FileWindow } from '../components/interactive.js';
-import { WindowDiv } from '../components/interactive.js'
-import { WindowIcon } from '../components/interactive.js'
+import { Window, SimpleWindow, FileWindow, WindowDiv, WindowIcon } from '../components/interactive.js'
 import { Time } from '../components/live.js'
 
 export default function Main(){
@@ -26,7 +22,6 @@ export default function Main(){
     </div>
     <WindowDiv>
     <Window windowName="notesWindow" contentStyle={{ minHeight: 0 }}><p contentEditable="true" spellCheck="false" /></Window>
-    <FileWindow />
     <Window windowName="gameWindow" windowStyle={{ padding: "16px 0px 0px 0px", height: 400 }}>
       <iframe
         frameBorder={0}
@@ -113,6 +108,7 @@ export default function Main(){
     <div
       className="notifs onTop animated"
       id="notifs"
+      alt="A currently unused notifications button."
       style={{ visibility: "hidden" }}
     >
       <div>

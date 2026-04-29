@@ -1,4 +1,4 @@
-const files = {
+/*const files = {
     type: "folder",
     content: [{
         name: "warrens",
@@ -465,13 +465,13 @@ const files = {
             }]
         }]
     }]
-};
+};*/
 var options = {animations: true}
 
-var mainBody
+/*var mainBody
 var animatedElements
 var gameIframe
-/*document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     var d = 0;
     var tickLastUpdate = Date.now()
 
@@ -493,9 +493,9 @@ var gameIframe
 
     gameIframe = document.getElementById("gameFrame")
     loadWindows()
-    mainBody = document.getElementById("body")*/
+    mainBody = document.getElementById("body")
     closeFolder()
-    /*animatedElements = document.getElementsByClassName("animated")
+    animatedElements = document.getElementsByClassName("animated")
     console.log(animatedElements)
 
     tick()
@@ -670,7 +670,7 @@ function windowAnim(){
         lastUpdate = null
         animatedWindow.style.transform = "translate(0px, 0px)"
     }
-} */
+}
 
 // Basic file navigation
 var currentFolder = []
@@ -771,4 +771,4 @@ function openContent(currentFile, dir = []){
 function shakeBody(){
     mainBody.style.transform = "translate("+(Math.random()*12-6)+"px, "+(Math.random()*12-6)+"px)"
     requestAnimationFrame(shakeBody)
-}
+}*/
