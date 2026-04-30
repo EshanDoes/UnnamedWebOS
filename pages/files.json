@@ -120,14 +120,14 @@
               "content": "A \"normal human\" who's managed to end up in a not-so-normal situation. It seems like she's quickly made friends, but how long until she moves on?<br><br>- Good at hiding her true self<br>- Quick to adapt to a new world<br>- Still loves nature<br><br>No need to do anything about her. Fate is already bringing her through her course."
             },
             {
-              "name": "ocsnCard",
-              "type": "image",
-              "content": "/images/files/ocsnCards/jen.png"
-            },
-            {
               "name": "jen&shiftyChatLogs",
               "type": "text",
               "content": "Shifty: Alright we need to talk about that link thing<br>Jen: Huh? What link thing? Did I miss something? ┌(. O . )┐<br>Shifty: Check your profile<br>Jen: Okay?<br>Jen: Why is there a link to a website? I don't remember posting that? o_o<br>Shifty: Same thing happened to me as well<br>Shifty: I have a feeling it might be Eshan and his tricks again<br>Jen: Are you sure it's him?<br>Jen: I think I've seen him a few times and he just looks like another guy... (￣. ￣)<br>Jen: Sure, he may look like a cardboard cutout floating in 3D space, but there's a lot weirder, right?<br>Shifty: Jen if there's one thing I can say it's that you shouldn't trust Eshan<br>Shifty: You have no idea what he's done to me<br>Jen: Okay, but I really think we should be doing a little bit of investigating first... (`v` ;)<br>Shifty: Alright that sounds like a good idea but if there's nothing then odds are it's still Eshan<br>Shifty: He's really good at covering his tracks"
+            },
+            {
+              "name": "ocsnCard",
+              "type": "image",
+              "content": "/images/files/ocsnCards/jen.png"
             }
           ]
         },
@@ -271,7 +271,7 @@
             {
               "name": "2026March12th",
               "type": "html",
-              "content": "<p>So I've been studying the recent clustural collapse, and <span class=\"fileLink\" onclick=\"openFolder([2])\">the people who got caught up in it.</span> It is very interesting to see how they adapt to this situation, how they interact, and more... as someone part of fate though, I do still have to do what I have to do. There are some people who I may have to stop, but there are also others I may help. I'll have to see who it'll be for each, I'll probably add a little thing at the bottom of each note to remember their course and how to adjust it to the path that aligns the best with fate.<br>... Jeez, how many Graces are there? 14? Guess I gotta get to work then...<br><br>- █████</p>"
+              "content": "<p>So I've been studying the recent clustural collapse, and <span class=\"fileLink\" onclick=\"openFolder([2])\">the people who got caught up in it.</span> It is very interesting to see how they adapt to this situation, how they interact, and more... as someone part of fate though, I do still have to do what I have to do. There are some people who I may have to stop, but there are also others I may help. I'll have to see who it'll be for each, I'll probably add a little thing at the bottom of each note to remember their course and how to adjust it to the path that aligns the best with fate.<br>... Jeez, how many Graces are there? 14? Guess I gotta get to work then...<br><br>- █████</p><br>P.S. This is █████ from the future, at the moment the file link isn't exactly working. I may or may not remove it at some point, for now I'm unsure."
             },
             {
               "name": "2026March13th",
@@ -291,12 +291,12 @@
             {
               "name": "2026March19th",
               "type": "html",
-              "content": "<p><span class='fileLink' onclick='openWindow(\"gameWindow\")'>Vimeo gane</span><br><br>- █████</p>"
+              "content": "<p><span class='fileLink' onclick='openWindow(\"gameWindow\", event)'>Vimeo gane</span><br><br>- █████</p>"
             },
             {
               "name": "2026March21st",
               "type": "html",
-              "content": "<p>Well, uh. When you think about it, if someone outside of the target audience found out about this, how would they understand literally anything? Actually, what even makes this any special from anything else? All I have are files, a notepad, and <span class='fileLink' onclick='openWindow(\"gameWindow\")'>vimeo gane</span>. I think I'm gonna add the news or something. Would be a cool idea to have something like that, just so I can keep up with the latest updates. I could add an article in there every week. Might be a decent idea.<br>Wait, what was I talking about again? Oh yeah, context. Gonna need to work on that at some point.<br><br>- █████</p>"
+              "content": "<p>Well, uh. When you think about it, if someone outside of the target audience found out about this, how would they understand literally anything? Actually, what even makes this any special from anything else? All I have are files, a notepad, and <span class='fileLink' onclick='openWindow(\"gameWindow\", event)'>vimeo gane</span>. I think I'm gonna add the news or something. Would be a cool idea to have something like that, just so I can keep up with the latest updates. I could get an article in there every week. Might be a decent idea.<br>Wait, what was I talking about again? Oh yeah, context. Gonna need to work on that at some point.<br><br>- █████</p>"
             },
             {
               "name": "2026March23rd",
@@ -306,7 +306,7 @@
             {
               "name": "2026 March 25th",
               "type": "html",
-              "content": "<p>I am sick and tired of pretending these file names are limited by anything. Actually, no I'm not, I like naming files like this.<img src='emojis/smile.png'><br>... I'm starting to realize how sarcastic that sentence sounds with the emoji.<br>Anyways, I'm running out of things to write, so I might as well actually have a way for you to run a function I wrote a few weeks ago but never actually put as, like, a button or anything. <span class='fileLink' onclick='shakeBody()'>Here it is.</span><br><br>- █████</p>"
+              "content": "<p>I am sick and tired of pretending these file names are limited by anything. Actually, no I'm not, I like naming files like this.<img src='/images/emojis/smile.png'><br>... I'm starting to realize how sarcastic that sentence sounds with the emoji.<br>Anyways, I'm running out of things to write, so I might as well actually have a way for you to run a function I wrote a few weeks ago but never actually put as, like, a button or anything. <span class='fileLink' onclick='shakeBody()'>Here it is.</span><br><br>- █████</p>"
             },
             {
               "name": "2026March27th",
@@ -352,6 +352,10 @@
               "name": "29th",
               "type": "html",
               "content": "<p>Talk about a timeskip, huh?<br>So, 20 days without a log. I did kind of take a break from this stuff, because I was busy with some other stuff pertaining to fate, and as the last log said, I had to rewrite the entire site in a new framework. Luckily, I had a deadline to help me remember I had to do this! Without it, I wouldn't have updated for at least a month.<br>Either way, I'm glad I did this. Everything is more organized now, and I can do more with what I have without having to go through a mess of stuff. Plus, I'll be able to do more with this too, like the chat log interceptions, although there's still some things here and there I need to fix before my work is done. Guess I'll try and get back into the habit of noting stuff down for now.<br><br>- █████</p>"
+            },{
+              "name": "30th",
+              "type": "html",
+              "content": "<p>You know, now that I think about it, the notifications button keeps getting added and removed over and over. When I started this, there wasn't a notification button, but then I decided to add it thinking it would be cool to try having notifications, but then the button dissapeared and I didn't notice until a while later, and then when I noticed I decided to add it back and finally finish coding it, but now that everything's transfered I decided to remove it again because I don't feel like doing all the stuff for something like that as well. All of this while I've never actually found a real purpose for the notifications... oh well, once I do I'll probably re-add it again.<br><br>- █████</p>"
             }
           ]
         }

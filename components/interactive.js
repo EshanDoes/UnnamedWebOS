@@ -249,6 +249,8 @@ export function WindowDiv({ children }){
     }
   }
   // End of a small bit of AI code
+
+  useEffect(() => {window.openWindow = openWindow}, [openWindow])
   
   return (<div ref={windowDiv} id="windows">
     {children}
@@ -315,7 +317,15 @@ export function TextFileWindow({ dir, content = null }){
     content = openFile(dir).content
   }
   var windowName = "w" + dir.join("-")
-  return <Window key={windowName} windowName={windowName} contentStyle={{ minHeight: 0 }}><p contentEditable="true" spellCheck="false">{content}</p></Window>
+  const contentRef = useRef(null)
+  
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.innerHTML = content
+    }
+  }, [content])
+
+  return <SimpleWindow key={windowName} windowName={windowName} contentStyle={{ minHeight: 0 }}><div className="windowContent"><p ref={contentRef} contentEditable="true" spellCheck="false"></p></div></SimpleWindow>
 }
 export function ContentFileWindow({ dir, content = null }){
   if(content == null){
@@ -331,8 +341,8 @@ export function ContentFileWindow({ dir, content = null }){
   }, [content])
   
   return (
-    <Window key={windowName} windowName={windowName}>
+    <SimpleWindow key={windowName} windowName={windowName}>
       <div ref={contentRef} className="windowContent"></div>
-    </Window>
+    </SimpleWindow>
   )
 }

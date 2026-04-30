@@ -19,6 +19,7 @@ export default function Main(){
       <WindowIcon window="notesWindow" name="notes" />
       <WindowIcon window="game" />
       <WindowIcon window="news" />
+      {/*<WindowIcon window="contact" />*/}
     </div>
     <WindowDiv>
     <Window windowName="notesWindow" contentStyle={{ minHeight: 0 }}><p contentEditable="true" spellCheck="false" /></Window>
@@ -71,6 +72,11 @@ export default function Main(){
         </p>
         {/*<p style="text-align: center;"><small>All articles taken from Mystery Man's Hobbyist News</small></p>*/}
     </Window>
+    <Window windowName="contactWindow">
+      <p>Contact me!</p>
+      <br />
+      <ContactForm />
+    </Window>
     <Window windowName="touchscreenWindow">
       <h1>NOTICE</h1>
       <p>
@@ -99,11 +105,11 @@ export default function Main(){
       <a href="https://discord.gg/ENChZjqFBx" aria-label="Join the Technical Difficulties Discord server">
         <img src="/images/ui/icons/bottombar/chat.png" alt="A chat icon under the link to a Discord server." />
       </a>
-      <img
+      {/*<img
         src="/images/ui/icons/bottombar/notif.png"
         id="notifButton"
         // onClick={toggleNotifs()}
-      />
+      />*/}
     </div>
     <div
       className="notifs onTop animated"
@@ -125,11 +131,23 @@ export default function Main(){
     })
   })
   function shakeBody(){
-    useEffect(() => {
-      mainBody.style.transform = "translate("+(Math.random()*12-6)+"px, "+(Math.random()*12-6)+"px)";
+      document.getElementById("body").style.transform = "translate("+(Math.random()*12-6)+"px, "+(Math.random()*12-6)+"px)";
       requestAnimationFrame(shakeBody)
-    })
   }
+  useEffect(() => {window.shakeBody = shakeBody}, [shakeBody])
 
   return (output);
+}
+
+function ContactForm(){
+  return (<form action="/hello" method="POST" autoComplete="off">
+            <label htmlFor="email">E-mail:</label>
+            <input type="email" id="emailInput" name="email" required />
+            <br />
+            <label htmlFor="message">Message:</label>
+            <br />
+            <textarea id="messageInput" name="message" required />
+            <br />
+            <input type="submit" value="Send" />
+          </form>)
 }
