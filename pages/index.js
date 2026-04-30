@@ -34,41 +34,26 @@ export default function Main(){
       />
     </Window>
     <Window windowName="newsWindow">
-      <img src="/images/news/article1/header.png" className="fill" alt="A header image featuring a pen." />
-        <h1>WEIRD PEN APPEARED</h1>
+      <img src="/images/news/article2/header.png" className="fill" alt="A header image featuring a pen." />
+        <h1>NEW WARREN'S RESTRUANT IN SPACE</h1>
+        <p>The famously deadly food chain Warren's has decided to launch a restruant in the most unexpected location imaginable: space. They usually have their locations in either Utah or Ohio, which makes this decision extremely surprising.</p>
         <p>
-          A really weird pen appeared in the outskirts of Nashville, Ohio and
-          was discovered by a local resident. It was shown to everyone else in
-          the town, and was feared by many, while others laughed or were just
-          confused. We've asked a local about what they thought, and here's what
-          they said:
+          The new location has launched with an exclusive meal: the 40 Cent Special. It's the exact same as the 30 Cent Special, except they added 10 more cents to both the price and the plate. Many customers call this <q>a dissapointment to Warren's as a whole</q> because of the similaritiy to the 30 Cent Special. A few days after the announcement, a statement was made from Warren's adressing the 40 Cent Special. Here's an excerpt from their statement:
           <br />
           <br />
           <q>
-            It's really weird. I think- I think they should bring it to Area 51,
-            I dunno.
+            We believe that at Warren's, anything can happen, which we mean in the most literal way we possibly can. That is why we decided to make the 40 Cent Special; after all, it would be completely unexpected for us, which is what we at Warren's strive to do. We also try to strive to make food that kills you, but we haven't been up on that, and for that we apologize. We will try to do better on that department of Warren's.
           </q>
           <br />
           <br />
-          When the pen is used on some parts of the paper, it seems to work just
-          fine, while on others it's like it isn't even a pen at all. Currently
-          scientists are studying this pen and its properties in order to find
-          out where the pen came from, what the pen truly is, and why it acts
-          like this.
+          There were mixed opinions on this statement. Some believe Warren's managed to pull out their biggest trick yet with this, others believe that Warren's priorities should be in making the food more unique than unexpected. Either way, one thing's for sure: they're still going to get customers in space, despite the little amount of people there.
         </p>
-        <p>
-          More info will be documented and revealed on here when it comes out.
-          In the meantime, it's best to stay away from any silver pens with a
-          blue tip until the matter has been resolved.
-        </p>
-        <p>
-          This is Mystery Man, and you've just finished reading the current
-          article of Mystery Man's Hobbyist News.
-        </p>
+        <small>Wow, that was a much better ending than last article. I should try and work on these endings more, they're kinda important.</small>
+        <br />
         <br />
         <br />
         <p style={{ textAlign: "center" }}>
-          <small>Article 1 - April 1st, 2026 - Updated every Friday</small>
+          <small>Article 2 - May 1st, 2026 - Usually updated every Friday</small>
         </p>
         {/*<p style="text-align: center;"><small>All articles taken from Mystery Man's Hobbyist News</small></p>*/}
     </Window>
