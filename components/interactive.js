@@ -188,13 +188,13 @@ export function Window({ windowName, children, windowStyle = {}, headerStyle = {
     </SimpleWindow>)
 }
 export function FileWindow({ windowRef, contentRef, backRef }){
-    return (
+  return (
     <SimpleWindow ref={windowRef} windowName="folderWindow" headerChildren={
-        <button ref={backRef}><img src="/images/ui/main/back.png" className="backButton" alt="A back button meant for going to the previous folder." /></button>
+      <button ref={backRef}><img src="/images/ui/main/back.png" className="backButton" alt="A back button meant for going to the previous folder." /></button>
     }>
-        <div ref={contentRef} className="windowContent"><p>Test</p></div>
+      <div ref={contentRef} className="windowContent"><p>Test</p></div>
     </SimpleWindow>
-    )
+  )
 }
 
 export function WindowIcon({ window, name = window }){
@@ -301,6 +301,7 @@ export function fileSystem(fileWindow, fileDiv, windowDiv, backButton, addWindow
     }
 
     back.addEventListener("click", closeFolder)
+    window.addEventListener('keyup', (e) => {if(e.code == "Escape"){closeFolder()}})
     openFolder([])
   }, [fileWindow, fileDiv, windowDiv, backButton, addWindow])
 }

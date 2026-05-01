@@ -43,6 +43,7 @@ yarn-error.log*
 
 # ENV files (can opt-in for committing if needed)
 .env*
+.env*.local
 
 # Vercel
 .vercel

@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useRef, useEffect } from 'react';
+import { preload } from 'react-dom';
 
 import { Window, SimpleWindow, FileWindow, WindowDiv, WindowIcon, openWindow } from '../components/interactive.js'
 import { Time } from '../components/live.js'
@@ -127,6 +128,11 @@ export default function Main(){
       requestAnimationFrame(shakeBody)
   }
   useEffect(() => {window.shakeBody = shakeBody}, [shakeBody])
+
+  preload('/images/ui/icons/files/folder.png', {as: 'image'})
+  preload('/images/ui/icons/files/image.png', {as: 'image'})
+  preload('/images/ui/icons/files/text.png', {as: 'image'})
+  preload('/images/ui/icons/files/html.png', {as: 'image'})
 
   return (output);
 }
