@@ -114,15 +114,13 @@ export default function Main(){
       evt.target.scrollTop = 0;
       evt.target.scrollLeft = 0;
     });
-    function openTouchDisclaimer(){
+    if("ontouchstart" in document.documentElement){
+      const disclaimerInfo = document.getElementById("touchscreenWindow").getBoundingClientRect()
       openWindow("touchscreenWindow", {
-        clientX: window.width / 2,
-        clientY: window.height / 2
+        clientX: window.innerWidth / 2 - disclaimerInfo.width / 2,
+        clientY: window.innerHeight / 2 - disclaimerInfo.height / 2
       })
-      document.getElementById("touchscreenWindow").style.transform = "translate(-50%, -50%)"
-      document.removeEventListener('touchstart', openTouchDisclaimer)
     }
-    document.addEventListener('touchstart', openTouchDisclaimer)
   }, [openWindow])
   function shakeBody(){
       document.getElementById("body").style.transform = "translate("+(Math.random()*12-6)+"px, "+(Math.random()*12-6)+"px)";
