@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useRef, useEffect } from 'react';
 
-import { Window, SimpleWindow, FileWindow, WindowDiv, WindowIcon } from '../components/interactive.js'
+import { Window, SimpleWindow, FileWindow, WindowDiv, WindowIcon, openWindow } from '../components/interactive.js'
 import { Time } from '../components/live.js'
 
 export default function Main(){
@@ -113,8 +113,17 @@ export default function Main(){
     mainBody.current.addEventListener('scroll', evt => {
       evt.target.scrollTop = 0;
       evt.target.scrollLeft = 0;
-    })
-  })
+    });
+    function openTouchDisclaimer(){
+      openWindow("touchscreenWindow", {
+        clientX: window.width / 2,
+        clientY: window.height / 2
+      })
+      document.getElementById("touchscreenWindow").style.transform = "translate(-50%, -50%)"
+      document.removeEventListener('touchstart', openTouchDisclaimer)
+    }
+    document.addEventListener('touchstart', openTouchDisclaimer)
+  }, [openWindow])
   function shakeBody(){
       document.getElementById("body").style.transform = "translate("+(Math.random()*12-6)+"px, "+(Math.random()*12-6)+"px)";
       requestAnimationFrame(shakeBody)

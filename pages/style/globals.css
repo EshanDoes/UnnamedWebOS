@@ -420,15 +420,3 @@ iframe{position: sticky}
     width: 100%;
     height: auto;
 }
-
-#touchscreenWindow{
-    visibility: hidden;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%)
-}
-@media (hover: none), (pointer: coarse) {
-#touchscreenWindow{
-    visibility: visible;
-}
-}
