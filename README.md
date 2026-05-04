@@ -1,6 +1,6 @@
 # ██████ OS
 
-![A cover for the site with an image of a monitor on the top and "██████ OS" on the bottom](public/images/sitecover.png)
+![A cover for the site with an image of a monitor on the top and "██████ OS" on the bottom](/public/images/sitecover.png)
 
 This is a little project from me and a group of other people that we're making as a way to tease future things happening in a specific community! It has a lot of ARG-ish elements, but I wouldn't consider it a full ARG in of itself. It's *close*, but not quite there.
 

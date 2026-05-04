@@ -15,17 +15,17 @@
           "type": "folder",
           "content": [
             {
-              "name": "HotBread",
+              "name": "Hot Bread",
               "type": "text",
               "content": "The number one meal from the restruant. It features a chicken fried steak with a sauce that is literally just every other sauce that exists combined, and a reverse hot dog placed like a cherry on top. This meal also kills you the fastest, with the consumer's heart immediately stopping as soon as it touches the tongue."
             },
             {
-              "name": "ReverseHotDog",
+              "name": "Reverse Hot Dog",
               "type": "text",
               "content": "A sausage with the bread placed inside of the sausage instead of outside, as well as all the sauce used in the reverse hot dog. This is one of the few meals that isn't deadly by itself, which has recently been causing reconciderations as to whether or not this should stay on the menu."
             },
             {
-              "name": "WarrensClassic2x2Burger",
+              "name": "Warren's Classic 2x2 Burger",
               "type": "text",
               "content": "It seems like a regular burger on the outside, but there's a lot on the inside. There's iceberg lettuce that comes from an iceberg, ground beef which comes from the ground, salt, imitation (what in the world does the nutrition label mean by that), and the biggest part is the number 1 grade mustard seeds."
             },
@@ -35,7 +35,7 @@
               "content": "It's literally just a baby named Greg. Rumors say there's a guy being cloned in the kitchen over and over to make each Greg, however whether or not that's true is unconfirmed. This is usually ordered by beasts like caterpillars. Weird, disgusting, humanoid caterpillars."
             },
             {
-              "name": "srettiFelppA",
+              "name": "srettiF elppA",
               "type": "text",
               "content": "It's an apple fritter, except it was made in the mirror dimension that appears in \"Kirby and the Amazing Mirror.\" There's seemingly no difference, but there could very well be an important reason as to why it's made in the mirror dimension every single time."
             }
@@ -271,7 +271,7 @@
             {
               "name": "2026March12th",
               "type": "html",
-              "content": "<p>So I've been studying the recent clustural collapse, and <span class=\"fileLink\" onclick=\"openFolder([2])\">the people who got caught up in it.</span> It is very interesting to see how they adapt to this situation, how they interact, and more... as someone part of fate though, I do still have to do what I have to do. There are some people who I may have to stop, but there are also others I may help. I'll have to see who it'll be for each, I'll probably add a little thing at the bottom of each note to remember their course and how to adjust it to the path that aligns the best with fate.<br>... Jeez, how many Graces are there? 14? Guess I gotta get to work then...<br><br>- █████</p><br>P.S. This is █████ from the future, at the moment the file link isn't exactly working. I may or may not remove it at some point, for now I'm unsure."
+              "content": "<p>So I've been studying the recent clustural collapse, and <span class=\"fileLink\" onclick=\"openFolder([2])\">the people who got caught up in it.</span> It is very interesting to see how they adapt to this situation, how they interact, and more... as someone part of fate though, I do still have to do what I have to do. There are some people who I may have to stop, but there are also others I may help. I'll have to see who it'll be for each, I'll probably add a little thing at the bottom of each note to remember their course and how to adjust it to the path that aligns the best with fate.<br>... Jeez, how many Graces are there? 14? Guess I gotta get to work then...<br><br>- █████</p><p>P.S. This is █████ from the future, at the moment the file link isn't exactly working. I may or may not remove it at some point, for now I'm unsure.</p><p>P.P.S. This is █████ from the farther future, I decided to fix it.</p>"
             },
             {
               "name": "2026March13th",
@@ -358,6 +358,20 @@
               "content": "<p>You know, now that I think about it, the notifications button keeps getting added and removed over and over. When I started this, there wasn't a notification button, but then I decided to add it thinking it would be cool to try having notifications, but then the button dissapeared and I didn't notice until a while later, and then when I noticed I decided to add it back and finally finish coding it, but now that everything's transfered I decided to remove it again because I don't feel like doing all the stuff for something like that as well. All of this while I've never actually found a real purpose for the notifications... oh well, once I do I'll probably re-add it again.<br><br>- █████</p>"
             }
           ]
+        },{
+          "name": "2026May",
+          "type": "folder",
+          "content": [
+            {
+              "name": "1st",
+              "type": "html",
+              "content": "<p>New month, new features!<br>I decided to add my first keyboard shortcut! Whenever you press ESC, it actually closes the current folder you're on. I thought nothing of it at first, but now that I've actually added it, browsing my files is now a breeze! One thing though, the tree of folders doesn't really go that far down. If you open a folder that's in another folder, there's not gonna be any more folders in that folder. It just ends. I do kinda feel like I should fix that, have more branches, more paths, more to look around, a maze of digital data...<br>Oh wait, I'm getting ahead of myself, I don't need that much. Oh well!<br><br>- █████</p>"
+            },{
+              "name": "4th",
+              "type": "html",
+              "content": "<p>To code, or not to code? That is the question on my mind. I've barely had anything to code, and yet so many ideas I could code. Whether or not I will code is a mystery until I open the code.<br>... I dunno what I'm doing anymore.<br><br>- █████</p>"
+            }
+          ]
         }
       ]
     },
@@ -371,14 +385,8 @@
           "content": [
             {
               "name": "",
-              "type": "folder",
-              "content": [
-                {
-                  "name": "",
-                  "type": "text",
-                  "content": "Long ago, the universe was once many pieces, fragments isolated by impenetrable walls. However, most people lacked any true free will, only acting out the whims of higher forces. All but a few, who sought to rebel against their destinies, and fought against these greater powers. After a long, grueling conflict, they emerged victorious. The walls, without anything to keep them in place, crumbled down, and the universe was made whole, and its people were bestowed free will for the first time."
-                }
-              ]
+              "type": "text",
+              "content": "Long ago, the universe was once many pieces, fragments isolated by impenetrable walls. However, most people lacked any true free will, only acting out the whims of higher forces. All but a few, who sought to rebel against their destinies, and fought against these greater powers. After a long, grueling conflict, they emerged victorious. The walls, without anything to keep them in place, crumbled down, and the universe was made whole, and its people were bestowed free will for the first time.<br><br>- Source Unknown"
             }
           ]
         }

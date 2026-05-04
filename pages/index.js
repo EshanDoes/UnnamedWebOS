@@ -2,11 +2,12 @@ import Head from 'next/head';
 import { useRef, useEffect } from 'react';
 import { preload } from 'react-dom';
 
-import { Window, SimpleWindow, FileWindow, WindowDiv, WindowIcon, openWindow } from '../components/interactive.js'
+import { Window, SimpleWindow, FileWindow, WindowDiv, WindowIcon, openWindow, Notification } from '../components/interactive.js'
 import { Time } from '../components/live.js'
 
 export default function Main(){
   const mainBody = useRef(null)
+  const notifs = Notification()
 
   var output = <>
   <Head>
@@ -91,22 +92,9 @@ export default function Main(){
       <a href="https://discord.gg/ENChZjqFBx" aria-label="Join the Technical Difficulties Discord server">
         <img src="/images/ui/icons/bottombar/chat.png" alt="A chat icon under the link to a Discord server." />
       </a>
-      {/*<img
-        src="/images/ui/icons/bottombar/notif.png"
-        id="notifButton"
-        // onClick={toggleNotifs()}
-      />*/}
+      {notifs[0]}
     </div>
-    <div
-      className="notifs onTop animated"
-      id="notifs"
-      alt="A currently unused notifications button."
-      style={{ visibility: "hidden" }}
-    >
-      <div>
-        <p>No notifications...</p>
-      </div>
-    </div>
+    {notifs[1]}
   </div>
 </>
 

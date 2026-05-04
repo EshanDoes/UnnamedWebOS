@@ -173,7 +173,7 @@ export function SimpleWindow({ windowName, children, windowStyle = {}, headerSty
     <div ref={windowRef} id={windowName} className="window" style={windowStyle}>
       <div ref={headerRef} className="header" id={`${windowName}header`} style={headerStyle}>
         {headerChildren}
-        <button ref={xButtonRef}><img src="/images/ui/main/x.png" className="xButton" alt="An X button on a window meant to close the window." /></button>
+        <button className="xButton" ref={xButtonRef}><img src="/images/ui/main/x.png" alt="An X button on a window meant to close the window." /></button>
       </div>
       {children}
     </div>
@@ -190,7 +190,7 @@ export function Window({ windowName, children, windowStyle = {}, headerStyle = {
 export function FileWindow({ windowRef, contentRef, backRef }){
   return (
     <SimpleWindow ref={windowRef} windowName="folderWindow" headerChildren={
-      <button ref={backRef}><img src="/images/ui/main/back.png" className="backButton" alt="A back button meant for going to the previous folder." /></button>
+      <button className="backButton" ref={backRef}><img src="/images/ui/main/back.png" alt="A back button meant for going to the previous folder." /></button>
     }>
       <div ref={contentRef} className="windowContent"><p>Test</p></div>
     </SimpleWindow>
@@ -302,6 +302,7 @@ export function fileSystem(fileWindow, fileDiv, windowDiv, backButton, addWindow
 
     back.addEventListener("click", closeFolder)
     window.addEventListener('keyup', (e) => {if(e.code == "Escape"){closeFolder()}})
+    window.openFolder = openFolder
     openFolder([])
   }, [fileWindow, fileDiv, windowDiv, backButton, addWindow])
 }
@@ -346,4 +347,41 @@ export function ContentFileWindow({ dir, content = null }){
       <div ref={contentRef} className="windowContent"></div>
     </SimpleWindow>
   )
+}
+
+export function Notification(){
+  const [notifsHidden, setNotifsHidden] = useState(true)
+  const notifButton = useRef(null)
+  const notifDiv = useRef(null)
+
+  function toggleNotifs(){
+    if(notifsHidden){
+      setNotifsHidden(false)
+    } else{
+      setNotifsHidden(true)
+    }
+  }
+
+  function NotifButton(){
+    return (<button
+            id="notifButton"
+            onClick={toggleNotifs}
+            ref={notifButton}
+          >
+            <img alt="A notifications button which shows no new notifications." src="/images/ui/icons/bottombar/notif.png" />
+          </button>)
+  }
+  function NotifDiv(){
+    return (<div
+            className={`notifs onTop animated${!notifsHidden ? " open" : ""}`}
+            id="notifs"
+            ref={notifDiv}
+          >
+            <div>
+              <p>No notifications...</p>
+            </div>
+          </div>)
+  }
+
+  return([<NotifButton />, <NotifDiv />])
 }
