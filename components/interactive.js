@@ -76,9 +76,6 @@ export function openWindow(openedWindow, event = null) {
   if (mainBody.getBoundingClientRect().width - (windowLeft + openingWindow.getBoundingClientRect().width) < 0) {
     windowLeft = mainBody.getBoundingClientRect().width - openingWindow.getBoundingClientRect().width - 6
   }
-  if (windowLeft < 0) {
-    windowLeft = 4
-  }
   if (windowTop < 0) {
     windowTop = 4
   }
@@ -173,7 +170,7 @@ export function SimpleWindow({ windowName, children, windowStyle = {}, headerSty
     <div ref={windowRef} id={windowName} className="window" style={windowStyle}>
       <div ref={headerRef} className="header" id={`${windowName}header`} style={headerStyle}>
         {headerChildren}
-        <button ref={xButtonRef}><img src="/images/ui/main/x.png" className="xButton" alt="An X button on a window meant to close the window." /></button>
+        <button className="xButton" ref={xButtonRef}><img src="/images/ui/main/x.png" alt="An X button on a window meant to close the window." /></button>
       </div>
       {children}
     </div>
@@ -188,13 +185,13 @@ export function Window({ windowName, children, windowStyle = {}, headerStyle = {
     </SimpleWindow>)
 }
 export function FileWindow({ windowRef, contentRef, backRef }){
-    return (
+  return (
     <SimpleWindow ref={windowRef} windowName="folderWindow" headerChildren={
-        <button ref={backRef}><img src="/images/ui/main/back.png" className="backButton" alt="A back button meant for going to the previous folder." /></button>
+      <button className="backButton" ref={backRef}><img src="/images/ui/main/back.png" alt="A back button meant for going to the previous folder." /></button>
     }>
-        <div ref={contentRef} className="windowContent"><p>Test</p></div>
+      <div ref={contentRef} className="windowContent"><p>Test</p></div>
     </SimpleWindow>
-    )
+  )
 }
 
 export function WindowIcon({ window, name = window }){
@@ -301,6 +298,8 @@ export function fileSystem(fileWindow, fileDiv, windowDiv, backButton, addWindow
     }
 
     back.addEventListener("click", closeFolder)
+    window.addEventListener('keyup', (e) => {if(e.code == "Escape"){closeFolder()}})
+    window.openFolder = openFolder
     openFolder([])
   }, [fileWindow, fileDiv, windowDiv, backButton, addWindow])
 }
@@ -345,4 +344,43 @@ export function ContentFileWindow({ dir, content = null }){
       <div ref={contentRef} className="windowContent"></div>
     </SimpleWindow>
   )
+}
+
+export function Notification(){
+  const notifsHidden = useRef(true)
+  const notifButton = useRef(null)
+  const notifDiv = useRef(null)
+
+  function toggleNotifs(){
+    if(notifsHidden.current){
+      notifsHidden.current = false
+      notifDiv.current.classList.add("open")
+    } else{
+      notifsHidden.current = true
+      notifDiv.current.classList.remove("open")
+    }
+  }
+
+  function NotifButton(){
+    return (<button
+            id="notifButton"
+            onClick={toggleNotifs}
+            ref={notifButton}
+          >
+            <img alt="A notifications button which shows no new notifications." src="/images/ui/icons/bottombar/notif.png" />
+          </button>)
+  }
+  function NotifDiv(){
+    return (<div
+            className={`notifs onTop animated`}
+            id="notifs"
+            ref={notifDiv}
+          >
+            <div>
+              <p>No notifications...</p>
+            </div>
+          </div>)
+  }
+
+  return([<NotifButton />, <NotifDiv />])
 }

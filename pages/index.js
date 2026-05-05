@@ -1,11 +1,13 @@
 import Head from 'next/head';
 import { useRef, useEffect } from 'react';
+import { preload } from 'react-dom';
 
-import { Window, SimpleWindow, FileWindow, WindowDiv, WindowIcon, openWindow } from '../components/interactive.js'
+import { Window, SimpleWindow, FileWindow, WindowDiv, WindowIcon, openWindow, Notification } from '../components/interactive.js'
 import { Time } from '../components/live.js'
 
 export default function Main(){
   const mainBody = useRef(null)
+  const notifs = Notification()
 
   var output = <>
   <Head>
@@ -90,22 +92,9 @@ export default function Main(){
       <a href="https://discord.gg/ENChZjqFBx" aria-label="Join the Technical Difficulties Discord server">
         <img src="/images/ui/icons/bottombar/chat.png" alt="A chat icon under the link to a Discord server." />
       </a>
-      {/*<img
-        src="/images/ui/icons/bottombar/notif.png"
-        id="notifButton"
-        // onClick={toggleNotifs()}
-      />*/}
+      {notifs[0]}
     </div>
-    <div
-      className="notifs onTop animated"
-      id="notifs"
-      alt="A currently unused notifications button."
-      style={{ visibility: "hidden" }}
-    >
-      <div>
-        <p>No notifications...</p>
-      </div>
-    </div>
+    {notifs[1]}
   </div>
 </>
 
@@ -114,21 +103,24 @@ export default function Main(){
       evt.target.scrollTop = 0;
       evt.target.scrollLeft = 0;
     });
-    function openTouchDisclaimer(){
+    if("ontouchstart" in document.documentElement){
+      const disclaimerInfo = document.getElementById("touchscreenWindow").getBoundingClientRect()
       openWindow("touchscreenWindow", {
-        clientX: window.width / 2,
-        clientY: window.height / 2
+        clientX: window.innerWidth / 2 - disclaimerInfo.width / 2,
+        clientY: window.innerHeight / 2 - disclaimerInfo.height / 2
       })
-      document.getElementById("touchscreenWindow").style.transform = "translate(-50%, -50%)"
-      document.removeEventListener('touchstart', openTouchDisclaimer)
     }
-    document.addEventListener('touchstart', openTouchDisclaimer)
   }, [openWindow])
   function shakeBody(){
       document.getElementById("body").style.transform = "translate("+(Math.random()*12-6)+"px, "+(Math.random()*12-6)+"px)";
       requestAnimationFrame(shakeBody)
   }
   useEffect(() => {window.shakeBody = shakeBody}, [shakeBody])
+
+  preload('/images/ui/icons/files/folder.png', {as: 'image'})
+  preload('/images/ui/icons/files/image.png', {as: 'image'})
+  preload('/images/ui/icons/files/text.png', {as: 'image'})
+  preload('/images/ui/icons/files/html.png', {as: 'image'})
 
   return (output);
 }

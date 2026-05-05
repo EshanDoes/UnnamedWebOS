@@ -237,7 +237,10 @@ iframe{position: sticky}
     right: 0px;
     cursor: var(--hoverCursor);
 }
-#notifButton:hover{
+#notifButton:hover img{
+    content: url("/images/ui/icons/bottombar/hover/notif.png");
+}
+#notifButton:focus img{
     content: url("/images/ui/icons/bottombar/hover/notif.png");
 }
 [src="/images/ui/icons/bottombar/notifNew.png"]#notifButton:hover{
@@ -254,12 +257,17 @@ iframe{position: sticky}
     height: max-content;
     width: 480px;
     position: absolute;
-    right: -480px;
     bottom: 32px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex;
+}
+.notifs:not(.open){
+    right: -480px;
+}
+.open.notifs{
+    right: 0px;
 }
 
 #options{
@@ -365,13 +373,16 @@ iframe{position: sticky}
     image-rendering: pixelated;
     cursor: var(--hoverCursor);
 }
-.header button:focus .xButton{
+.xButton:focus img{
     content: url("/images/ui/main/hover/x.png");
 }
-.xButton:hover{
+.xButton:hover img{
     content: url("/images/ui/main/hover/x.png");
 }
-.backButton:hover{
+.backButton:focus img{
+    content: url("/images/ui/main/hover/back.png");
+}
+.backButton:hover img{
     content: url("/images/ui/main/hover/back.png");
 }
 
