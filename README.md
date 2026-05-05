@@ -14,8 +14,8 @@ I can't say much about this as to not spoil much, so you'll have to explore ever
 - A notes app to think about why there's a Warren's folder and what it could possibly mean!
 - A clicker game to waste time on!
 - A news app for... fictional news!
-- ~~A notifications bar that never gets any notifications!~~ ~~Wait, what do you mean the notifications button isn't there?~~ ~~Nevermind, the notifications are back and they serve no purpose!~~ The notifications are gone yet again, and I'm not sure if they're coming back!
-- A bottom bar with the time, a chat icon, ~~and that notifications button I mentioned earlier~~!
+- ~~A notifications bar that never gets any notifications!~~ ~~Wait, what do you mean the notifications button isn't there?~~ ~~Nevermind, the notifications are back and they serve no purpose!~~ ~~The notifications are gone yet again, and I'm not sure if they're coming back!~~ A notifications button that got re-added yet again!
+- A bottom bar with the time, a chat icon, and that notifications button I mentioned earlier!
 - A unique pixel art hacker(ish) style!
 
 
