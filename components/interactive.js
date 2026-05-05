@@ -76,9 +76,6 @@ export function openWindow(openedWindow, event = null) {
   if (mainBody.getBoundingClientRect().width - (windowLeft + openingWindow.getBoundingClientRect().width) < 0) {
     windowLeft = mainBody.getBoundingClientRect().width - openingWindow.getBoundingClientRect().width - 6
   }
-  if (windowLeft < 0) {
-    windowLeft = 4
-  }
   if (windowTop < 0) {
     windowTop = 4
   }
@@ -350,15 +347,17 @@ export function ContentFileWindow({ dir, content = null }){
 }
 
 export function Notification(){
-  const [notifsHidden, setNotifsHidden] = useState(true)
+  const notifsHidden = useRef(true)
   const notifButton = useRef(null)
   const notifDiv = useRef(null)
 
   function toggleNotifs(){
-    if(notifsHidden){
-      setNotifsHidden(false)
+    if(notifsHidden.current){
+      notifsHidden.current = false
+      notifDiv.current.classList.add("open")
     } else{
-      setNotifsHidden(true)
+      notifsHidden.current = true
+      notifDiv.current.classList.remove("open")
     }
   }
 
@@ -373,7 +372,7 @@ export function Notification(){
   }
   function NotifDiv(){
     return (<div
-            className={`notifs onTop animated${!notifsHidden ? " open" : ""}`}
+            className={`notifs onTop animated`}
             id="notifs"
             ref={notifDiv}
           >
