@@ -97,6 +97,34 @@ p{
 #body p{
     color: #306230;
 }
+h1{
+    color: white;
+    font-size: 48px;
+    font-family: DD;
+    text-align: center;
+    margin: 6px;
+    text-rendering: pixelated;
+}
+#body h1{
+    color: #0f380f;
+}
+small{
+    font-size: 16px;
+    font-family: DD;
+    text-rendering: pixelated;
+    color: #306230;
+}
+.fileLink{
+    color: #6dbd16;
+    text-decoration: underline dashed #6dbd16 2px;
+}
+.fileLink:hover{
+    text-decoration-style: wavy;
+}
+.fileLink::selection{
+    color: #0f380f;
+}
+
 label {
     color: #306230;
     font-family: DD-thin;
@@ -144,32 +172,12 @@ textarea {
     cursor: var(--cursor);
     resize: none;
 }
-h1{
-    color: white;
-    font-size: 48px;
-    font-family: DD;
-    text-align: center;
-    margin: 6px;
-    text-rendering: pixelated;
-}
-#body h1{
+form [aria-live="polite"] {
     color: #0f380f;
+    display: none;
 }
-small{
-    font-size: 16px;
-    font-family: DD;
-    text-rendering: pixelated;
-    color: #306230;
-}
-.fileLink{
-    color: #6dbd16;
-    text-decoration: underline dashed #6dbd16 2px;
-}
-.fileLink:hover{
-    text-decoration-style: wavy;
-}
-.fileLink::selection{
-    color: #0f380f;
+form:user-invalid [area-live="polite"]{
+    display: block;
 }
 
 img{

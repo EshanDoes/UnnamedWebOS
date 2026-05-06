@@ -374,6 +374,10 @@
               "name": "5th",
               "type": "html",
               "content": "<p>I'm running out of things to say, have some bird questions!<br><br>Can birds fly?<br>Can birds cry?<br>Can birds lie?<br>Can birds dry?<br>Can birds die?<br>Can birds buy?<br>Can birds sigh?<br>Can birds tie?<br>Can birds pry?<br>Can birds fry?<br>Can birds try?<br>Can birds pie?<br><br>- █████</p>"
+            },{
+              "name": "6th",
+              "type": "html",
+              "content": "<p>This website has gotten too immersive. I keep reaching for the Alt + F4 shortcut to close a window, but then I have to stop myself and remember that this is a website and not my actual operating system.<br>I also really need things to add to the site. As I rambled about a few days ago, I have a bunch of ideas, but I don't feel like implementing them. It's like I've hit a block in motivation, despite really wanting to implement these features. Is this the coding version of artist block? Code block?<br>... Nah, code blocks would be from Scratch. I feel like there'd be another name for this kinda thing.<br><br>- █████</p>"
             }
           ]
         }
@@ -395,6 +399,10 @@
           ]
         }
       ]
+    },{
+      "name": "README",
+      "type": "text",
+      "content": "Why are you trying to read a README file here? This isn't a GitHub repository. I don't even have any markdown implementation on this site!"
     }
   ]
 }

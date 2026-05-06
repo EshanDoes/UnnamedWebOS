@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { preload } from 'react-dom';
 
 import { Window, SimpleWindow, FileWindow, WindowDiv, WindowIcon, openWindow, Notification } from '../components/interactive.js'
@@ -21,7 +21,7 @@ export default function Main(){
       <WindowIcon window="notesWindow" name="notes" />
       <WindowIcon window="game" />
       <WindowIcon window="news" />
-      {/*<WindowIcon window="contact" />*/}
+      <WindowIcon window="contact" />
     </div>
     <WindowDiv>
     <Window windowName="notesWindow" contentStyle={{ minHeight: 0 }}><p contentEditable="true" spellCheck="false" /></Window>
@@ -60,8 +60,6 @@ export default function Main(){
         {/*<p style="text-align: center;"><small>All articles taken from Mystery Man's Hobbyist News</small></p>*/}
     </Window>
     <Window windowName="contactWindow">
-      <p>Contact me!</p>
-      <br />
       <ContactForm />
     </Window>
     <Window windowName="touchscreenWindow">
@@ -126,14 +124,48 @@ export default function Main(){
 }
 
 function ContactForm(){
-  return (<form action="/hello" method="POST" autoComplete="off">
-            <label htmlFor="email">E-mail:</label>
-            <input type="email" id="emailInput" name="email" required />
-            <br />
-            <label htmlFor="message">Message:</label>
-            <br />
-            <textarea id="messageInput" name="message" required />
-            <br />
-            <input type="submit" value="Send" />
-          </form>)
+  const [formUnfilled, setFormUnfilled] = useState(true)
+  const emailRef = useRef(null)
+  const messageRef = useRef(null)
+  const subjectRef = useRef(null)
+
+  async function sendForm(e){
+    e.preventDefault();
+    setFormUnfilled(false)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: emailRef.current.value,
+          message: messageRef.current.value,
+          subject: subjectRef.current.value,
+        }),
+      });
+      if (!res.ok) throw new Error('Upload failed');
+    } catch (error) {
+      console.error(error);
+      setFormUnfilled(true); // Allow retry on error
+    }
+  }
+
+  const form = <><p>Contact me!</p>
+                <br />
+                <form action="/hello" method="POST" autoComplete="off" onSubmit={sendForm}>
+                <label htmlFor="subject">Subject:</label>
+                <input type="text" id="subjectInput" name="subject" ref={subjectRef} />
+                <br />
+                <label htmlFor="email">E-mail:</label>
+                <input type="email" id="emailInput" name="email" ref={emailRef} required />
+                <br />
+                <label htmlFor="message">Message:</label>
+                <br />
+                <textarea id="messageInput" name="message" ref={messageRef} required />
+                <br />
+                <input type="submit" value="Send" />
+                <br />
+                <span aria-live="polite"><p>At least one of the fields hasn't been filled out. Please fill out the field and resubmit.</p></span>
+                </form>
+              </>
+  return (<>{ formUnfilled ? form : <p>Form sent! Now you can wait for a response.</p>}</>)
 }
