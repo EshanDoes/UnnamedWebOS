@@ -86,6 +86,21 @@ body{
     box-shadow: none;
 }
 
+button {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    width: min-content;
+    height: min-content;
+    display: inline-flex;
+    align-items: baseline;
+}
+button:focus {
+    outline: none;
+}
+
 p{
     color: white;
     font-family: DD-thin;
@@ -132,6 +147,7 @@ label {
     margin: 4px;
     text-rendering: pixelated;
     image-rendering: pixelated;
+    cursor: inherit;
 }
 input {
     color: #306230;
@@ -147,11 +163,16 @@ input {
     padding: 2px;
     cursor: var(--cursor);
 }
-input[type="submit"]{
-    cursor: var(--hoverCursor)
+input[type="submit"], .actualButton{
+    cursor: var(--hoverCursor);
+    outline: 2px solid #306230;
+    
 }
-input[type="submit"]:hover{
+input[type="submit"]:hover, input[type="submit"]:focus, .actualButton:hover, .actualButton:focus{
     outline-color: #6dbd16;
+    color: #6dbd16;
+}
+.actualButton:hover p{
     color: #6dbd16;
 }
 textarea {
@@ -192,20 +213,6 @@ p img{
 }
 #body p img::selection{
     background-color: #6dbd16;
-}
-button {
-    background-color: transparent;
-    padding: 0;
-    margin: 0;
-    outline: none;
-    border: none;
-    width: min-content;
-    height: min-content;
-    display: inline-flex;
-    align-items: baseline;
-}
-button:focus {
-    outline: none;
 }
 a {cursor: var(--hoverCursor)}
 iframe{position: sticky}
@@ -394,16 +401,16 @@ iframe{position: sticky}
     content: url("/images/ui/main/hover/back.png");
 }
 
-#body ::-webkit-scrollbar{
+#body ::-webkit-scrollbar, #body ::-moz-scrollbar{
     background-color: #306230;
     max-width: 16px;
 }
-#body ::-webkit-scrollbar-thumb{
+#body ::-webkit-scrollbar-thumb, #body ::-moz-scrollbar-thumb{
     background-color: #518d23;
     border: 3px solid #306230;
     cursor: var(--hoverCursor);
 }
-#body ::-webkit-scrollbar-thumb:hover{
+#body ::-webkit-scrollbar-thumb:hover, #body ::-moz-scrollbar-thumb:hover{
     background-color: #6dbd16;
 }
 

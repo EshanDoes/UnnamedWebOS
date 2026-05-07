@@ -22,7 +22,7 @@ I can't say much about this as to not spoil much, so you'll have to explore ever
 ## CREDITS
 
 
-**Made for the [Flavortown WebOS Jam](https://flavortown.hackclub.com/sidequests/webos)**
+Made for the [**Flavortown WebOS Jam**](https://flavortown.hackclub.com/sidequests/webos), check out the project [here](https://flavortown.hackclub.com/projects/14633).
 
 
 

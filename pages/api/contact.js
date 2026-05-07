@@ -8,7 +8,9 @@ export default async function handler(req, res) {
   try {
     const { email, message, subject } = req.body;
 
-    const { url } = await put(`emails/${email}-${subject}.txt`, message, {
+    const fileId = Math.random() / Math.random()
+
+    const { url } = await put(`emails/${subject}―${email}―${fileId}.txt`, message, {
       access: 'private',
       token: process.env.BLOB_READ_WRITE_TOKEN,
     });

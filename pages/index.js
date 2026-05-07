@@ -33,6 +33,7 @@ export default function Main(){
         width={400}
         height={420}
         id="gameFrame"
+        name="██████ Clicker"
       />
     </Window>
     <Window windowName="newsWindow">
@@ -54,9 +55,7 @@ export default function Main(){
         <br />
         <br />
         <br />
-        <p style={{ textAlign: "center" }}>
-          <small>Article 2 - May 1st, 2026 - Usually updated every Friday</small>
-        </p>
+        <small style={{ placeSelf: "center" }}>Article 2 - May 1st, 2026 - Usually updated every Friday</small>
         {/*<p style="text-align: center;"><small>All articles taken from Mystery Man's Hobbyist News</small></p>*/}
     </Window>
     <Window windowName="contactWindow">
@@ -138,8 +137,8 @@ function ContactForm(){
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email: emailRef.current.value,
-          message: messageRef.current.value,
           subject: subjectRef.current.value,
+          message: messageRef.current.value,
         }),
       });
       if (!res.ok) throw new Error('Upload failed');
@@ -147,6 +146,9 @@ function ContactForm(){
       console.error(error);
       setFormUnfilled(true); // Allow retry on error
     }
+  }
+  function resetForm(){
+    setFormUnfilled(true)
   }
 
   const form = <><p>Contact me!</p>
@@ -167,5 +169,5 @@ function ContactForm(){
                 <span aria-live="polite"><p>At least one of the fields hasn't been filled out. Please fill out the field and resubmit.</p></span>
                 </form>
               </>
-  return (<>{ formUnfilled ? form : <p>Form sent! Now you can wait for a response.</p>}</>)
+  return (<>{ formUnfilled ? form : <><p>Form sent! Now you can wait for a response...</p><button className="actualButton" onClick={resetForm}><p>Send another</p></button></>}</>)
 }
