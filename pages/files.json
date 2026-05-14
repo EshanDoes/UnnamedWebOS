@@ -230,6 +230,36 @@
               "name": "notes",
               "type": "text",
               "content": "A loner from the \"Warrior Cats\" series who's gotten stranded in a universe that's not his, separated from what he's used to. Seems like he found a group of friends he's comfortable with, but whether that affects his longing for home remains to be seen.<br><br>- Easily stressed out in unfamiliar situations, but looks to be able to easily adapt and improvise.<br>- Wants to find Barley, his mate from his universe. Location unknown.<br><br>Data about his destiny is coming back as inconclusive. Further observation may be necessary."
+            },{
+              "name": "spamFolder",
+              "type": "folder",
+              "content": [
+                {
+                  "name": "README (real this time)",
+                  "type": "text",
+                  "content": "This folder is just full of stuff from this one guy who keeps contacting me asking stuff about Ravenpaw. Seriously, he even put signs in front of my base in the Minecraft server asking about Ravenpaw. Like, do you think I know what's going on with Ravenpaw? I barely even know he exists! You gotta ask the other guy about him, I'm sure he knows a lot more than I do."
+                },{
+                  "name": "Hey just checking in",
+                  "type": "text",
+                  "content": "So uh, I was going through the website as usual when i noticed that Ravenpaw was STILL stranded? I assume this was a mistake because I'm sure you know that if he's left there then I'LL SKIN YOU ALIVE.<br> DON\"T TEST ME I'LL DO IT!<br>Anyway, I was just making sure that you're taking care of that.<br>      Sincerely, The Ravenpaw Fan<br><br>P.S. I'M ALWAYS WATCHING"
+                },{
+                  "name": "MOTHER FU-",
+                  "type": "text",
+                  "content": "Genuinely why? This time it's not a repetitive one, but I genuinely wonder what Ravenpaw did to you to make you wish this upon him. He just wants to see his mate. And Barley wants to see him too, I'm sure. You're not just hurting Ravenpaw with this, but the entire forest. Barley, Firestar, Graystripe... they all knew him and loved him. And you stole him away. Now he can't see them and they can't see him. I hope you realize your wrongdoing, and decide to make it right.<br><br>                          Sincerely, The Ravenpaw Fan"
+                },{
+                  "name": "TADC",
+                  "type": "text",
+                  "content": "Hello, this is spam. I'm bored. Feel free to delete this.<br><br><br>LET RAVENPAW GO HOME<br><br>lol"
+                },{
+                  "name": "Hey just a friendly reminder:",
+                  "type": "text",
+                  "content": "LET RAVENPAW GO HOME<br>YOU MONSTERS<br>LET RAVENPAW GO HOME<br>YOU MONSTERS<br>LET RAVENPAW GO HOME<br>YOU MONSTERS<br>LET RAVENPAW GO HOME<br>YOU MONSTERS<br>LET RAVENPAW GO HOME<br>YOU MONSTERS<br>LET RAVENPAW GO HOME<br>YOU MONSTERS<br>LET RAVENPAW GO HOME<br>YOU MONSTERS"
+                },{
+                  "name": "I DEMAND JUSTICE",
+                  "type": "text",
+                  "content": "LET RAVENPAW GO HOME<br>HE MISSES BARLEY<br>LET HIM SEE BARLEY<br>LET RAVENPAW GO HOME<br>HE MISSES BARLEY<br>LET HIM SEE BARLEY<br>LET RAVENPAW GO HOME<br>HE MISSES BARLEY<br>LET HIM SEE BARLEY<br>LET RAVENPAW GO HOME<br>HE MISSES BARLEY<br>LET HIM SEE BARLEY<br>LET RAVENPAW GO HOME<br>HE MISSES BARLEY<br>LET HIM SEE BARLEY<br>LET RAVENPAW GO HOME<br>HE MISSES BARLEY<br>LET HIM SEE BARLEY<br>LET RAVENPAW GO HOME<br>HE MISSES BARLEY<br>LET HIM SEE BARLEY"
+                }
+              ]
             }
           ]
         }
@@ -378,6 +408,14 @@
               "name": "6th",
               "type": "html",
               "content": "<p>This website has gotten too immersive. I keep reaching for the Alt + F4 shortcut to close a window, but then I have to stop myself and remember that this is a website and not my actual operating system.<br>I also really need things to add to the site. As I rambled about a few days ago, I have a bunch of ideas, but I don't feel like implementing them. It's like I've hit a block in motivation, despite really wanting to implement these features. Is this the coding version of artist block? Code block?<br>... Nah, code blocks would be from Scratch. I feel like there'd be another name for this kinda thing.<br><br>- █████</p>"
+            },{
+              "name": "12th",
+              "type": "html",
+              "content": "<p>I'm bored.<br><br>- █████</p>"
+            },{
+              "name": "14th",
+              "type": "html",
+              "content": "<p>Looking at the character files... what was I thinking when I was writing them? They feel off in multiple different ways... I gotta try and fix that.<br><br>- █████</p>"
             }
           ]
         }

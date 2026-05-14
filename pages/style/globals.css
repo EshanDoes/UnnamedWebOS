@@ -166,7 +166,7 @@ input {
 input[type="submit"], .actualButton{
     cursor: var(--hoverCursor);
     outline: 2px solid #306230;
-    
+    margin: 2px;
 }
 input[type="submit"]:hover, input[type="submit"]:focus, .actualButton:hover, .actualButton:focus{
     outline-color: #6dbd16;
